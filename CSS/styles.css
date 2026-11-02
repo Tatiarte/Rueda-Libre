@@ -57,11 +57,65 @@ button {
     cursor: pointer;
 }
 
+/* Este es el color normal del #menu*/
 #menu a {
     color: var(--color-asphalt-gray);
 }
-
-.activo {
+/* Aquí modificamos el estilo del #menu -Hover sirve para activar un texto cuando colocas el cursor del mouse sobre este elemento*/
+#menu a:hover {
     color: var(--color-route-green);
+}
+
+/* Aquí también modificamos el estilo pero en función del focus, sirve para activar cuando seleccionas un elemento mediante el teclado, por ejemplo usando tab*/
+#menu a:focus {
+/* color cambia el color de texto cuando el enlace recibe el foco*/
+    color: var(--color-night-blue);
+/* outline dibuja un contorno naranja alrededor del enlace*/
+    outline: 2px solid var(--color-pedal-orange);
+/*outline-offset separa un poco el contorno del enlace para que sea más visible*/
+    outline-offset: 4px;
+}
+
+
+/* Aquí tenemos el estilo que definimos en la clase .btn-reservar como se puede ver tiene la apariencia de un botón aunque no lo sea*/
+.btn-reservar {
+    /* permite aplicar dimensiones y espaciado al enlace*/
+    display: inline-block;
+    /* Establece el fondo verde*/
+    background-color: var(--color-route-green);
+    /* establece el texto de color blanco*/
+    color: var(--color-white);
+    font-family: var(--font-body);
+    /* hace el texto más grueso*/
     font-weight: 600;
+    /* quieta el subrayado del enlace*/
+    text-decoration: none;
+    /* Agrega espacio interior*/
+    padding: var(--spacing-medium);
+    /* Redondea las esquinas*/
+    border-radius: 5px;
+}
+
+
+/* Al igual que con #menu- aquí usamos hover para cambiar el color cuando pasamos el cursor del mouse por el texto*/
+.btn-reservar:hover {
+    background-color: var(--color-night-blue);
+    color: var(--color-white);
+}
+
+/* Y el focus para que cambie de estilo cuando pasamos por el enlace con tab*/
+.btn-reservar:focus {
+    background-color: var(--color-night-blue);
+    color: var(--color-white);
+    outline: 2px solid var(--color-pedal-orange);
+    outline-offset: 4px;
+}
+
+/* Aquí pasaré a modificar el estilo del formulario - aquí lo que hago es utilizar selectores agrupados*/
+/* quiere decir que, en lugar de una regla para cada elemento, separamos los selectores con comas y aplicamos la misma propiedad*/
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid var(--color-route-green);
+    outline-offset: 3px;
 }

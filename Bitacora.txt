@@ -212,15 +212,17 @@ Finalmente, realizar commit y push al repositorio.
 
 MINIRETO 10 / 
 
-Especifidad: el selector ID tiene mayor especificidad que uno con clase
+- Especifidad: el selector ID tiene mayor especificidad que uno con clase - se reviso en las DevTools
 Problema encontrado: La clase .activo no logra cambiar el color del enlace porque el selector #menu a tiene mayor especificidad.
 
-Cálculo de especificidad:
+- Cálculo de especificidad:
 #menu a: 1 ID, 0 clases y 1 elemento (1-0-1).
 .activo: 0 ID, 1 clase y 0 elementos (0-1-0).
 
-Causa:
+- Causa: El selector #menu a tiene mayor especificidad, por lo que el navegador aplica el color gris y deja tachada la declaración de color verde de
+.activo en DevTools. La clase sí funciona: su propiedad font-weight: 600 se aplica, pero el color pierde frente al selector más específico.
+Recuerda Primer número: selectores de ID. Segundo número: selectores de clase. Tercer número: selectores de elementos HTML.
 
-El selector #menu a tiene mayor especificidad, por lo que el navegador aplica el color gris y deja tachada la declaración de color verde de
-.activo en DevTools.
-La clase sí funciona: su propiedad font-weight: 600 se aplica, pero el color pierde frente al selector más específico.
+
+- En el Mini Reto 10 se reutilizó la paleta de colores definida y evaluada en el Mini Reto 8 mediante WebAIM Contrast Checker. 
+Se conservaron las combinaciones aptas de texto y fondo, garantizando una relación de contraste mínima de 4.5:1 para texto normal.
