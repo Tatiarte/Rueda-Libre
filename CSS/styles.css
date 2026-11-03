@@ -157,6 +157,8 @@ select:focus {
     border: 1px solid var(--color-asphalt-gray);
     border-radius: 8px;
     margin-bottom: var(--spacing-medium);
+    /* esta posición relativa permite ubicar la etiqueta "Nuevo" en una posición específica dentro de la tarjeta*/
+    position: relative;
 }
 
 /* Tati, recuerda que gracias a box-sizing: border-box, el ancho de la tarjeta incluye su padding y sus bordes. NO LO OLVIDES*/
@@ -164,6 +166,26 @@ select:focus {
 .servicios img {
     width: 100%;
 }
+
+.etiqueta-nuevo {
+    /*fondo naranja*/
+    background-color: var(--color-pedal-orange);
+    /*color del texto*/
+    color: var(--color-night-blue);
+    /*agrega espacio entre el texto y los bordes*/
+    padding: var(--spacing-small);
+    /* hace que la palabra "Nuevo" se vea más gruesa*/
+    font-weight: 600;
+    /* redondea las esquinas de la etiqueta*/
+    border-radius: 5px;
+    /* permite ubicar la etiqueta en una posición específica*/
+    position: absolute;
+    /* establece la distancia desde la parte superior y derecha de la tarjeta*/
+    top: var(--spacing-small);
+    /* establece la distancia desde la parte derecha de la tarjeta*/
+    right: var(--spacing-small);
+}
+
 
 /* Aquí le damos estilo a la sección de tarifas, para que las tablas se vean mejor*/
 /*table th selecciona las celdas que funcionan como encabezados*/
@@ -209,4 +231,10 @@ form textarea {
 
 form fieldset {
     margin-bottom: var(--spacing-large);
+}
+
+.whatsapp-fijo {
+    position: fixed;
+    right: var(--spacing-medium);
+    bottom: var(--spacing-medium);
 }
