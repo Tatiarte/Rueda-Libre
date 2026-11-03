@@ -258,3 +258,25 @@ Resultado:
 Se completó la estructura y presentación de las tres páginas del proyecto Rueda Libre. Las pruebas realizadas permitieron verificar su funcionamiento 
 y corregir los detalles pendientes antes de dejar la última versión
 
+MINIRETO 1 - SEMANA 2- Un encabezado que se acomoda – Flexbox
+Objetivo: Organizar el encabezado, el menú de navegación y el footer utilizando Flexbox para mejorar su distribución y adaptación
+a diferentes tamaños de pantalla.
+
+Cambios realizados:
+
+- Encabezado: Apliqué "display: flex" al contenedor para organizar el nombre de Rueda Libre y el menú de navegación en extremos opuestos, 
+    utilizando "justify-content: space-between" y "align-items: center".
+- Menú: Convertí la lista de navegación (#menu) en un contenedor flexible con display: flex. Utilicé gap para mantener una separación uniforme
+    entre los enlaces y flex-wrap: wrap para permitir que pasen a otra línea cuando no hay suficiente espacio. 
+    También eliminé los márgenes y rellenos predeterminados de la lista y quité las viñetas con list-style: none.
+- Footer: Organicé su contenido en tres bloques: marca, contacto y horario de atención. Utilicé display: flex, justify-content: space-between, 
+    align-items: flex-start, flex-wrap: wrap y gap para distribuirlos horizontalmente y permitir que se acomoden en nuevas filas cuando el espacio
+    disminuye.
+
+Pruebas realizadas:
+
+- Reduje progresivamente el ancho del navegador para observar el comportamiento del encabezado y el footer.
+- Comprobé que los enlaces del menú se mantienen organizados y pueden pasar a otra línea cuando es necesario.
+- Verifiqué que los tres bloques del footer se reorganizan sin superponerse.
+- Revisé los cambios en las tres páginas: Inicio, Tarifas y Reservas.
+
