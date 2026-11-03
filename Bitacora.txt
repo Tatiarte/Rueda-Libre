@@ -259,6 +259,8 @@ Se completó la estructura y presentación de las tres páginas del proyecto Rue
 y corregir los detalles pendientes antes de dejar la última versión
 
 MINIRETO 1 - SEMANA 2- Un encabezado que se acomoda – Flexbox
+
+
 Objetivo: Organizar el encabezado, el menú de navegación y el footer utilizando Flexbox para mejorar su distribución y adaptación
 a diferentes tamaños de pantalla.
 
@@ -280,3 +282,30 @@ Pruebas realizadas:
 - Verifiqué que los tres bloques del footer se reorganizan sin superponerse.
 - Revisé los cambios en las tres páginas: Inicio, Tarifas y Reservas.
 
+MINIRETO 2 SEMANA 2  – CSS Grid + Flexbox
+
+Objetivo:Crear una sección llamada «Nuestra flota» en la página principal de Rueda Libre, utilizando CSS Grid y Flexbox para organizar las tarjetas de bicicletas y lograr un diseño responsivo.
+
+Desarrollo:
+
+1. Agregué una nueva sección llamada «Nuestra flota» en `index.html`, debajo de la sección «Nuestros servicios».
+2. Creé siete tarjetas de bicicletas con su respectiva imagen, nombre, descripción, precio y enlace de reserva.
+3. Utilicé `display: grid` para organizar las tarjetas en una cuadrícula.
+4. Implementé `grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))` para permitir que las columnas se ajustaran automáticamente
+    al espacio disponible, sin utilizar media queries.
+5. Añadí `gap` para establecer espacios entre las tarjetas.
+6. Utilicé Flexbox en cada tarjeta mediante `display: flex` y `flex-direction: column`, organizando su contenido verticalmente.
+7. Apliqué `justify-content: space-between` para distribuir el espacio y mantener los enlaces de reserva alineados en la parte inferior de 
+    las tarjetas de una misma fila.
+8. Agregué `padding`, `border` y `border-radius` para mejorar la presentación visual de las tarjetas.
+9. Ajusté las imágenes con `width: 100%`, `height: auto` y `display: block` para evitar que se desbordaran de sus contenedores.
+
+Pruebas de responsividad:
+
+Comprobé el comportamiento del Grid utilizando el modo dispositivo de las herramientas de desarrollador:
+
+- 1258 px: 4 columnas.
+- 900 px: 2 columnas.
+- 500 px: 1 columna.
+
+También agregué una séptima bicicleta (Tándem) y comprobé que la cuadrícula se reorganizara automáticamente sin modificar el CSS.

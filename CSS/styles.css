@@ -62,7 +62,37 @@ a {
     color: var(--color-route-green);
 }
  
- 
+/* Nuestra flota - CSS Grid */ 
+/* Aquí activamos grid, le indicamos al navegador que ese elemento será un contenedor de cuadrícula. */
+/*Sus hijos directos —en nuestro caso, los siete <article>— se convierten en elementos de Grid */
+.grid-flota {
+    display: grid;
+/* grid-template-columns es una propiedad que define cuántas columnas tendrá nuestra cuadrícula y cuánto espacio ocupará cada una */
+/* repeat significa repetición de configuración de columnas- auto- fit ajusta la cantidad de columnas según el espacio disponible*/
+/* minmax establece que cada columna tendrá un minimo de 250px y podrá crecer*/
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-large);
+}
+
+.tarjeta-bicicleta img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.tarjeta-bicicleta {
+    display: flex;
+    flex-direction: column;
+/* Distribuye el espacio libre entre los elementos, dejando el primero arriba y el último abajo.*/
+    justify-content: space-between;
+/* agrega espacio entre el contenido y los bordes de la tarjeta.*/
+    padding: var(--spacing-medium);
+/* dibuja un borde de 1 píxel, sólido y de color gris.*/
+    border: 1px solid var(--color-asphalt-gray);
+    border-radius: 8px;
+}
+
+
 /* ========================================
    3. LAYOUT (contenedores)
    ======================================== */
