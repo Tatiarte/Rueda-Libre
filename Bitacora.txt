@@ -234,3 +234,27 @@ Se compararon los modelos border-box y content-box en un elemento <article> con 
    -Con border-box, el ancho total fue de 500 px y el contenido ocupó 466 px.
     -Con content-box, el contenido ocupó 500 px y el ancho total aumentó a 534 px.
 Conclusión: border-box incluye el contenido, el padding y los bordes dentro del ancho declarado. Por eso facilita el control de las dimensiones de los elementos.
+
+MINIRETO 12 - Posicionamiento y lanzamiento de Rueda Libre 
+
+En este último MiniReto trabajé en los detalles finales del sitio web Rueda Libre.
+
+Cambios realizados:
+- Organicé la hoja de estilos CSS por secciones para facilitar su lectura y mantenimiento.
+- Implementé el posicionamiento relativo y absoluto para agregar la etiqueta «Nuevo» sobre la tarjeta de la bicicleta eléctrica.
+- Implementé un botón flotante de WhatsApp utilizando "position: fixed"
+- Verifiqué que los elementos posicionados no desplazaran ni ocultaran el contenido de las páginas.
+
+Pruebas realizadas:
+- Revisé la consola del navegador y no encontré errores.
+- Verifiqué la carga de recursos en las páginas Inicio, Tarifas y Reservas mediante Network: arrojo status 304 y 200
+- Comprobé que las fuentes tipográficas se cargaran correctamente.
+- Probé la navegación utilizando únicamente el teclado - desplazamiento con tab
+- Revisé el comportamiento de la etiqueta «Nuevo» y del botón fijo de WhatsApp en las tres páginas.
+- Comprobé que el botón de WhatsApp no cubriera información importante ni el footer.
+
+Resultado:
+
+Se completó la estructura y presentación de las tres páginas del proyecto Rueda Libre. Las pruebas realizadas permitieron verificar su funcionamiento 
+y corregir los detalles pendientes antes de dejar la última versión
+
