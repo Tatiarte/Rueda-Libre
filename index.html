@@ -12,23 +12,25 @@
     <!-- Tipografías -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <!-- Hoja de estilos externa: para que la hoja de estilo utilice las fuentes, estas se cargan primero que el css -->
-    <link rel="stylesheet" href="../Rueda-Libre/CSS/styles.css">
+    <link rel="stylesheet" href="CSS/styles.css">
 
 </head>
 
 <body>
   <!--Encabezado: nombre del negocio + navegación principal-->
   <header>
-    <p><strong>Rueda Libre</strong></p>
-    <nav aria-label="Navegación principal">
-      <!--asigno un ID al menú para poder estilizarlo  -->
-      <ul id="menu">
-        <!--el enlace Inicio debe llevar a la clase activo:-->
-        <li><a href="index.html" class="activo">Inicio</a></li>
-        <li><a href="paginas/tarifas.html">Tarifas</a></li>
-        <li><a href="paginas/reservas.html">Reservas</a></li>
-      </ul>
-    </nav>
+    <div class="contenedor">
+      <p><strong>Rueda Libre</strong></p>
+      <nav aria-label="Navegación principal">
+        <!--asigno un ID al menú para poder estilizarlo  -->
+        <ul id="menu">
+          <!--el enlace Inicio debe llevar a la clase activo:-->
+          <li><a href="index.html" class="activo">Inicio</a></li>
+          <li><a href="paginas/tarifas.html">Tarifas</a></li>
+          <li><a href="paginas/reservas.html">Reservas</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <!--Contenido principal: solo hay un <main> por página-->
@@ -37,7 +39,7 @@
     <section class="portada"  
       <h1>Rueda Libre | Alquiler de bicicletas en Medellín</h1>
 
-      <img src="img/Portada_Rueda_Libre.jpg" alt="Portada de Rueda Libre, alquiler de bicicletas en Medellín" width="600">
+      <img src="img/Portada_Rueda_Libre.jpg" alt="Portada de Rueda Libre, alquiler de bicicletas en Medellín" >
 
       <p>
         En Rueda Libre queremos que descubras Medellín de una manera diferente:
@@ -149,14 +151,23 @@
 
   <!--Pie de página-->
   <footer>
-    <p>Rueda Libre · <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a> · Todos los derechos reservados © 2026</p>
+    <div class="contenedor">
+      <p>
+        Rueda Libre ·
+        <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a> 
+        · Todos los derechos reservados © 2026</p>
+    </div>
   </footer>
-</body>
-<!--href es la dirección del enlace - la clase es para darle estilo - target abre el enlace en otra pestaña - noopener? para qué sirve? -->
+
+  <!--href es la dirección del enlace - la clase es para darle estilo - target abre el enlace en otra pestaña - noopener? para qué sirve? -->
+<!--noopener: evita que la página que abriste en otra pestaña pueda controlar la página original. noreferrer: evita que se envíe información sobre la página de origen al sitio que estás abriendo.-->
 <a href="https://wa.me/573000000000"
    class="whatsapp-fijo"
    target="_blank"
    rel="noopener noreferrer">
     WhatsApp
 </a>
+
+
+</body>
 </html>
