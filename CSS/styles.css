@@ -19,6 +19,29 @@
     --spacing-large: 2rem;
 }
 
+/* agregamos el box-sizing quiere decir que el ancho y alto de los elementos incluirá el padding y el borde */
+/*estamos indicando que todos los elementos deben calcular su ancho incluyendo el padding y el borde.*/
+/* content-box es el comportamiento predeterminado*/
+    * {
+        box-sizing: border-box;
+    
+    }
+    
+    
+    /* width establece un ancho  (90% para que se adapte a pantallas pequeñas)- max-width (75rem- evita que se extienda demasiado en */
+    /*pantallas grandes) establece un ancho máximo - min-width establece un ancho mínimo y margin: 0 lo centra*/
+    main {
+    width: 90%;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+/* min-height establece la altura de la ventana visible 100vh es la altura de la ventana 80vh es el 80% de la altura de la ventana visible*/
+    .portada {
+    min-height: 50vh;
+}
+    
+
 body {
     /* font-family: establece Open Sans como fuente principal para el cuerpo del documento */
     font-family: var(--font-body);
@@ -53,7 +76,7 @@ button {
     color: var(--color-white);
     font-family: var(--font-body);
     border: none;
-    padding: var(--spacing-medium);
+    padding: var(--spacing-large);
     cursor: pointer;
 }
 
@@ -76,7 +99,10 @@ button {
     outline-offset: 4px;
 }
 
-
+/* permite que los elementos de la lista se ubiquen uno al lado del otro pero conservando características de bloque como el padding y el margin*/
+#menu li {
+    display: inline-block;
+}
 /* Aquí tenemos el estilo que definimos en la clase .btn-reservar como se puede ver tiene la apariencia de un botón aunque no lo sea*/
 .btn-reservar {
     /* permite aplicar dimensiones y espaciado al enlace*/
@@ -118,4 +144,69 @@ textarea:focus,
 select:focus {
     outline: 2px solid var(--color-route-green);
     outline-offset: 3px;
+}
+
+/* .servicios es la clase que creamos en el index.html para darle estilos a todos los article de la section Nuestros servicios*/
+/* padding crea espacios entre el contenido de la tarejta (image, título y texto) y sus bordes */
+/* var(--spacing-medium) es la variable que declaramos en :root para establecer un espaciado medio*/
+/* border establece un borde de 1px de ancho, solid (línea continua) color gris. O sea, literal le hizo una margen cuadrada a la tarejeta*/
+/* border-radius redondea las esquinas*/
+/* margin-bottom agrega un espacio fuera de las tarjetas debajo de ellas para separar las tarjetas entre sí*/
+.servicios article {
+    padding: var(--spacing-medium);
+    border: 1px solid var(--color-asphalt-gray);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-medium);
+}
+
+/* Tati, recuerda que gracias a box-sizing: border-box, el ancho de la tarjeta incluye su padding y sus bordes. NO LO OLVIDES*/
+/* width: 100% hace que la tarjeta ocupe todo el ancho disponible*/
+.servicios img {
+    width: 100%;
+}
+
+/* Aquí le damos estilo a la sección de tarifas, para que las tablas se vean mejor*/
+/*table th selecciona las celdas que funcionan como encabezados*/
+/*table td selecciona las celdas que contienen datos*/
+/*paddign crea el espacio entre el texto y los bordes de cada celda*/
+table th,
+table td {
+    padding: var(--spacing-small);
+    border: 1px solid var(--color-asphalt-gray);
+}   
+
+/* table significa que selecciona la tabla completa, thead significa que selecciona el encabezado de la tabla, */
+/*background-color establece el color de fondo del encabezado de la tabla y */
+/*color establece el color del texto del encabezado de la tabla*/
+table thead {
+    background-color: var(--color-night-blue);
+    color: var(--color-white);
+}
+
+/* display: block hace que cada etiqueta de label se comporte como un bloque independiente y eso hace que ocupe su propia línea por eso*/
+/* en el campo siguiente aparece debajo*/
+/* form busca dentro del formulario - p busca los párrafos que contiene cada grupo - > indica que queremos seleccionar los elementos que son hijos directos*/
+/* label selecciona las etiquetas*/
+form p > label {
+    display: block;
+}
+
+/* form busca dentro del formulario - input busca los campos de entrada de texto, */ 
+/*select busca los menús desplegables y textarea selecciona el área de comentarios */
+/* OJO TATI: no modificaste los radio y checkbox porque así estirados se verían horribles*/
+form input:not([type="radio"]):not([type="checkbox"]),
+form select,
+form textarea {
+    width: 100%;
+/* agregue el max-width para que establezca un límite para el ancho disponible y no se vea tan feito*/
+    max-width: 40rem
+}
+
+
+/* margin-bottom agrega un espacio debajo de cada grupo de campos del formulario para separarlos entre sí*/
+/* var(--spacing-large) es la variable que declaramos en :root para establecer un espaciado grande*/
+/* TATI recuerda que declarar variables y escribir reglas de estilo son dos cosas diferentes NO LAS MEZCLES*/
+
+form fieldset {
+    margin-bottom: var(--spacing-large);
 }

@@ -226,3 +226,11 @@ Recuerda Primer número: selectores de ID. Segundo número: selectores de clase.
 
 - En el Mini Reto 10 se reutilizó la paleta de colores definida y evaluada en el Mini Reto 8 mediante WebAIM Contrast Checker. 
 Se conservaron las combinaciones aptas de texto y fondo, garantizando una relación de contraste mínima de 4.5:1 para texto normal.
+
+MINIRETO 11
+Prueba del modelo de caja (box-sizing):
+
+Se compararon los modelos border-box y content-box en un elemento <article> con un ancho declarado de 500 px, padding de 16 px y bordes de 1 px.
+   -Con border-box, el ancho total fue de 500 px y el contenido ocupó 466 px.
+    -Con content-box, el contenido ocupó 500 px y el ancho total aumentó a 534 px.
+Conclusión: border-box incluye el contenido, el padding y los bordes dentro del ancho declarado. Por eso facilita el control de las dimensiones de los elementos.

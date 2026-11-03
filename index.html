@@ -25,7 +25,7 @@
       <ul id="menu">
         <!--el enlace Inicio debe llevar a la clase activo:-->
         <li><a href="index.html" class="activo">Inicio</a></li>
-        <li><a href="paginas/tarifas.html">Tarifas y rutas</a></li>
+        <li><a href="paginas/tarifas.html">Tarifas</a></li>
         <li><a href="paginas/reservas.html">Reservas</a></li>
       </ul>
     </nav>
@@ -33,14 +33,21 @@
 
   <!--Contenido principal: solo hay un <main> por página-->
   <main>
-    <h1>Rueda Libre | Alquiler de bicicletas en Medellín</h1>
-    <img src="img/Portada.jpeg" alt="Portada de Rueda Libre, alquiler de bicicletas en Medellín" width="600">
-    <p>En Rueda Libre queremos que descubras Medellín de una manera diferente:
-      sobre dos ruedas, disfrutando de sus paisajes, sus calles y sus espacios urbanos.
-      <br>Ofrecemos alquiler de bicicletas, recorridos guiados y talleres básicos para
-      que vivas una experiencia cómoda, activa y cercana a la ciudad. <a href="#encuentranos">Encuéntranos</a>
-    </p>
+    <!-- creamos la clase portada dentro del section para que la podamos estilizar exclusivamente-->
+    <section class="portada"  
+      <h1>Rueda Libre | Alquiler de bicicletas en Medellín</h1>
 
+      <img src="img/Portada_Rueda_Libre.jpg" alt="Portada de Rueda Libre, alquiler de bicicletas en Medellín" width="600">
+
+      <p>
+        En Rueda Libre queremos que descubras Medellín de una manera diferente:
+      sobre dos ruedas, disfrutando de sus paisajes, sus calles y sus espacios urbanos.
+      <br>
+      Ofrecemos alquiler de bicicletas, recorridos guiados y talleres básicos para
+      que vivas una experiencia cómoda, activa y cercana a la ciudad. <a href="#encuentranos">Encuéntranos</a>
+      </p>
+    </section>
+    
     <section>
       <h2>¿Quiénes somos?</h2>
       <p>
@@ -50,12 +57,15 @@
       </p>
     </section>
 
-    <section>
+    <!--Cree una clase llamada servicios para agregarle estilos a todos los article de la section Nuestros servicios-->
+    <section class="servicios">
       <h2>Nuestros servicios</h2>
-      <img src="img/Bicicleta.jpg" alt="Bicicleta disponible para alquilar en Rueda Libre" width="400">
 
       <!--Cada servicio es un <article>: tiene sentido por sí solo-->
       <article>
+        <img src="img/Bicicleta.jpg" 
+              alt="Bicicleta disponible para alquilar en Rueda Libre" width="400">
+
         <h3>Alquiler de bicicletas</h3>
         <p>
           Alquila una bicicleta para recorrer Medellín a tu propio ritmo.
@@ -65,6 +75,8 @@
       </article>
 
       <article>
+        <img src="img/Recorrido.jpg" 
+              alt="Recorridos por Medellín" width="400">
         <h3>Recorridos guiados</h3>
         <p>
           Conoce los lugares más interesantes de Medellín acompañado por un guía.
@@ -74,6 +86,9 @@
       </article>
 
       <article>
+
+        <img src="img/Taller_basico.jpg" 
+              alt="Taller básico de mantenimiento de bicicletas" width="400">
         <h3>Taller básico</h3>
         <p>
           Aprende sobre el cuidado y el mantenimiento básico de tu bicicleta.
