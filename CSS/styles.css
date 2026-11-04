@@ -35,6 +35,12 @@
     box-sizing: border-box;
 }
 
+    /* las imagenes nunca podrán superar el ancho de su contenedor con max-width - y para mantener la proporción original de la imagen suamos height*/
+    img {
+    max-width: 100%;
+    height: auto;
+    }
+
 body {
     /* font-family: establece Open Sans como fuente principal para el cuerpo del documento */
     font-family: var(--font-body);
@@ -132,14 +138,31 @@ header {
     padding: var(--spacing-medium) 0;
 }
 
+
+/* ESTA ES LA DISTRIBUCIÓN INICIAL DEL MINIRETO 1 DE LA SEMANA 2 SE VA A MODIFICAR PARA RESPONDER AL MINIRETO 4 MOVILE*/
 /* Esto lo que hizo es poner el titulo Rueda Libre y el nav como elementos del display flex*/
 /* básicamente lo que hizo fue distibuir el espacio disponible entre ellos con*/
 /* justify-content: space-between para eso se uso estos elementos para decirle que los elementos se desplacen a los extremos*/
+/*
 header .contenedor {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}*/
+
+/* MÓVIL: encabezado  - REPASAR ESTO - ME CONFUNDE - LO MISMO PARA EL #menu y el footer .contenedor*/
+header .contenedor {
+    display: flex;
+    /*flex-direction: column: coloca el nombre y el menú uno debajo del otro*/
+    flex-direction: column;
+    /* align-items: center: centra los elementos horizontalmente.*/
+    align-items: center;
+    /* gap: establece una separación entre el nombre y el menú.*/
+    gap: var(--spacing-small);
+    text-align: center;
 }
+
+
 
 /* Esto elimina los márgenes del párrafo y los márgenes y el espacio interno de la lista.*/
 header p {
@@ -147,7 +170,7 @@ header p {
 }
 
 
-/* MODIFICAMOS CSS EN FUNCIÓN DE FLEX BOX*/
+/* MODIFICAMOS CSS EN FUNCIÓN DE FLEX BOX - para cumplir con el minireto 4 agregue justify-content: center;*/
 /* Para revisar la responsibidad en el navegador Ctrl + Shift + M */
 /* agregando display flex - flex- wrap y gap ya no tenemos que tener el elemento display: inline-block de los li de #menu y los borramos del css*/
 #menu {
@@ -155,6 +178,8 @@ header p {
     display: flex;
     /* permite que los elementos pasen a otra linea cuando no hay espacio suficiente*/
     flex-wrap: wrap;
+/*Esto permite que los enlaces queden centrados y pasen a otra línea cuando sea necesario.*/
+    justify-content: center;
     /* establece una separación uniforme entre los elementos*/
     gap: var(--spacing-medium);
     margin: 0;
@@ -193,16 +218,26 @@ header p {
 /* ========================================
    5. PORTADA
    ======================================== */
-
+/* CAMBIE .portada PARA RESPONDER AL MINIRETO 4 VERSIÓN MOBILE*/
 /* min-height establece la altura mínima de la sección. 50vh es la altura de la ventana, */
 /*80vh el 80% de la altura de la ventana visible (aquí usamos 50vh)*/
-.portada {
+/*.portada {
     min-height: 50vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-large);
     align-items: center;
 }
+
+/* MÓVIL: portada */
+.portada {
+    min-height: 50vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-large);
+    align-items: center;
+}
+
 
 .portada img {
     width: 100%;
@@ -264,11 +299,20 @@ button {
 /* ========================================
    TARJETAS DE RUTAS // se hizo con Grid
    ======================================== */
-.grid-rutas {
+/* CAMBIO .grid-rutas PARA CUMPLIR CON EL RETO 4 MOBILE SOLO CAMBIE EL grid-template-columns: repeat(3, 1fr);
+
+/*.grid-rutas {
     display: grid;
     /* grid- template- columns: repeat (3, 1fr) me esta indicando que las columnas van a permanecer de a tres por fila aunque le cambie el ancho 
     /* a la pantalla, por el contrario si uso repeat(auto-fit, minmax(250px, 1fr)) ajusta las columnas dependiendo del ancho de la pantalla*/
-    grid-template-columns: repeat(3, 1fr);
+ /*   grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-large);
+} */
+
+/* MOVILE */
+.grid-rutas {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: var(--spacing-large);
 }
 
@@ -386,10 +430,17 @@ form fieldset {
     margin-bottom: var(--spacing-large);
 }
 
-    /* Grid para distribuir el espacio del formulario en la página reservas*/
-.layout-reservas {
+    /* Grid para distribuir el espacio del formulario en la página reservas - SE REEMPLAZA EN FUNCIÓN DE MOVILE MINIRETO 4*/
+/*.layout-reservas {
     display: grid;
     grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-large);
+}
+
+/* MÓVIL: página de reservas */
+.layout-reservas {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: var(--spacing-large);
 }
 
@@ -402,12 +453,22 @@ form fieldset {
     align-self: start;
 }
 
+/* SE REEMPLAZA EN FUNCIÓN DE MOBILE MINIRETO 4*/
 /* Aquí cree una clase con un div para agrupar el celular y número de documento*/
-.campos-cortos {
+/*.campos-cortos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-medium);
 }
+
+/* MÓVILE */
+
+.campos-cortos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-medium);
+}
+
 
 /* ========================================
    10. BOTÓN FIJO DE WHATSAPP
@@ -449,20 +510,31 @@ footer {
     padding: var(--spacing-large) 0;
 }
 
-/* AQUI AGREGAMOS PROPIEDADES FLEX BOX*/
+/* AQUI AGREGAMOS PROPIEDADES FLEX BOX - Y PARA CUMPLIR MINIRETO 4 SE REEMPLAZA PARA AGREGARLE VERSIÓN MOBILE*/
 
-footer .contenedor {
+/*footer .contenedor {
     /* Coloca los tres bloques en una fila*/
-    display: flex;
+ /*   display: flex;
     /* 	Distribuye el espacio entre los bloques*/
-    justify-content: space-between;
+ /*   justify-content: space-between;
     /* 	Alinea los bloques desde arriba */
-    align-items: flex-start;
+ /*   align-items: flex-start;
     /* 	Permite que los bloques bajen a otra fila si no hay espacio */
-    flex-wrap: wrap;
+ /*   flex-wrap: wrap;
     /* 	Establece separación entre los bloques */
-    gap: var(--spacing-large);
+ /*   gap: var(--spacing-large); 
 }
+
+/* LO ANTERIOR SE REEMPLAZO POR ESTO*/ 
+/* MÓVIL: pie de página */
+footer .contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-large);
+    text-align: center;
+}
+
 
 /* Esto modifica el color del enlace del correo para que se vea más*/
 footer a {
@@ -471,4 +543,64 @@ footer a {
 
 footer a:hover {
     color: var(--color-pedal-orange);
+}
+
+
+/* ========================================
+   12. MOVILE
+   ======================================== */
+
+/* TABLET: desde 768px  - CON MEDIA QUERIS*/
+@media (min-width: 768px) {
+
+    /* Recuperamos la distribución horizontal del encabezado */
+    header .contenedor {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    #menu {
+        justify-content: flex-start;
+    }
+
+    /* Recuperamos la distribución horizontal del footer */
+    footer .contenedor {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        text-align: left;
+    }
+
+    /* Galería: dos columnas en tablet */
+    .grid-rutas {
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Campos del formulario: dos columnas en tablet */
+    .campos-cortos {
+    grid-template-columns: repeat(2, 1fr);
+}
+}
+
+    /* ESCRITORIO: desde 1200px */
+    @media (min-width: 1200px) {
+
+    /* Portada: dos columnas */
+    .portada {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Galería de rutas: tres columnas */
+    .grid-rutas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Reservas: proporción 2:1 */
+    .layout-reservas {
+        grid-template-columns: 2fr 1fr;
+    }
+
 }
