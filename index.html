@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Alquiler de bicicletas en Medellín, una idea para recorrer las calles de la ciudad">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rueda Libre | Alquiler de bicicletas en Medellín</title>
-    
-    <!-- Conexión con Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Tipografías -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Hoja de estilos externa: para que la hoja de estilo utilice las fuentes, estas se cargan primero que el css -->
-    <link rel="stylesheet" href="CSS/styles.css">
+  <meta charset="UTF-8">
+  <meta name="description" content="Alquiler de bicicletas en Medellín, una idea para recorrer las calles de la ciudad">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rueda Libre | Alquiler de bicicletas en Medellín</title>
+
+  <!-- Conexión con Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+  <!-- Hoja de estilos externa: para que la hoja de estilo utilice las fuentes, estas se cargan primero que el css -->
+  <link rel="stylesheet" href="CSS/styles.css">
 
 </head>
 
@@ -36,20 +38,52 @@
   <!--Contenido principal: solo hay un <main> por página-->
   <main>
     <!-- creamos la clase portada dentro del section para que la podamos estilizar exclusivamente-->
-    <section class="portada"  
-      <h1>Rueda Libre | Alquiler de bicicletas en Medellín</h1>
+    <section class="portada">
 
-      <img src="img/Portada_Rueda_Libre.jpg" alt="Portada de Rueda Libre, alquiler de bicicletas en Medellín" >
+      <div class="portada-texto">
+        <h1>Rueda Libre | Alquiler de bicicletas en Medellín</h1>
 
-      <p>
-        En Rueda Libre queremos que descubras Medellín de una manera diferente:
-      sobre dos ruedas, disfrutando de sus paisajes, sus calles y sus espacios urbanos.
-      <br>
-      Ofrecemos alquiler de bicicletas, recorridos guiados y talleres básicos para
-      que vivas una experiencia cómoda, activa y cercana a la ciudad. <a href="#encuentranos">Encuéntranos</a>
-      </p>
+        <p>
+          En Rueda Libre queremos que descubras Medellín de una manera diferente:
+          sobre dos ruedas, disfrutando de sus paisajes, sus calles y sus espacios urbanos.
+          <br>
+          Ofrecemos alquiler de bicicletas, recorridos guiados y talleres básicos para
+          que vivas una experiencia cómoda, activa y cercana a la ciudad.
+          <a href="#encuentranos">Encuéntranos</a>
+        </p>
+      </div>
+
+      <img src="img/Portada_Rueda_Libre.jpg" alt="Portada de Rueda Libre, alquiler de bicicletas en Medellín">
+
     </section>
-    
+
+    <section class="rutas">
+      <h2>Nuestras rutas</h2>
+
+      <div class="grid-rutas">
+
+        <article class="tarjeta-ruta">
+          <img src="img/volador.jpeg" alt="Ruta en bicicleta por el Cerro El Volador">
+          <h3>Cerro El Volador</h3>
+          <p>Nivel: Bajo</p>
+        </article>
+
+        <article class="tarjeta-ruta">
+          <img src="img/ciclovia.jpeg" alt="Ciclovía por la Regional">
+          <h3>Ciclovía</h3>
+          <p>Nivel: Intermedio</p>
+        </article>
+
+        <article class="tarjeta-ruta">
+          <img src="img/caldas.jpeg" alt="Ruta en bicicleta hacia Caldas">
+          <h3>Medellín - Caldas</h3>
+          <p>Nivel: Avanzado</p>
+        </article>
+
+      </div>
+    </section>
+
+
     <section>
       <h2>¿Quiénes somos?</h2>
       <p>
@@ -65,8 +99,7 @@
 
       <!--Cada servicio es un <article>: tiene sentido por sí solo-->
       <article>
-        <img src="img/Bicicleta.jpg" 
-              alt="Bicicleta disponible para alquilar en Rueda Libre" width="400">
+        <img src="img/Bicicleta.jpg" alt="Bicicleta disponible para alquilar en Rueda Libre" width="400">
 
         <h3>Alquiler de bicicletas</h3>
         <p>
@@ -77,8 +110,7 @@
       </article>
 
       <article>
-        <img src="img/Recorrido.jpg" 
-              alt="Recorridos por Medellín" width="400">
+        <img src="img/Recorrido.jpg" alt="Recorridos por Medellín" width="400">
         <h3>Recorridos guiados</h3>
         <p>
           Conoce los lugares más interesantes de Medellín acompañado por un guía.
@@ -89,8 +121,7 @@
 
       <article>
 
-        <img src="img/Taller_basico.jpg" 
-              alt="Taller básico de mantenimiento de bicicletas" width="400">
+        <img src="img/Taller_basico.jpg" alt="Taller básico de mantenimiento de bicicletas" width="400">
         <h3>Taller básico</h3>
         <p>
           Aprende sobre el cuidado y el mantenimiento básico de tu bicicleta.
@@ -103,91 +134,85 @@
         <!--span es una etiqueta que agrupa una pequeña parte del contenido y poder darle estilo con CSS -->
         <span class="etiqueta-nuevo">Nuevo</span>
 
-    <img src="img/Bicicletas_electricas.jpg"
-         alt="Bicicleta eléctrica disponible para alquilar"
-         width="400">
+        <img src="img/Bicicletas_electricas.jpg" alt="Bicicleta eléctrica disponible para alquilar" width="400">
 
-    <h3>Alquiler de bicicletas eléctricas</h3>
+        <h3>Alquiler de bicicletas eléctricas</h3>
 
-    <p>
-        Descubre Medellín con mayor comodidad gracias
-        al alquiler de bicicletas eléctricas.
-    </p>
+        <p>
+          Descubre Medellín con mayor comodidad gracias
+          al alquiler de bicicletas eléctricas.
+        </p>
       </article>
 
     </section>
-      <!-- Creamos la section flota y le agregamos un div, este contenedor nos permite modificar el CSS grid-->
-      <!--Aquí tenemos dos clases porque .flota identifica la sección compelta y .grid-fota es la que organice las tarjetas por medio de grid-->
+    <!-- Creamos la section flota y le agregamos un div, este contenedor nos permite modificar el CSS grid-->
+    <!--Aquí tenemos dos clases porque .flota identifica la sección compelta y .grid-fota es la que organice las tarjetas por medio de grid-->
     <section class="flota">
       <h2>Nuestra flota</h2>
 
-        <div class="grid-flota">
+      <div class="grid-flota">
 
-          <!--Los article representa cada una de las bicicleta como contenido independiente-->
-<article class="tarjeta-bicicleta">
-    <img src="img/urbana_clasica.jpg"
-    alt="Bicicleta urbana clásica">
-    <h3>Urbana Clásica</h3>
-    <p>
-    Cómoda y liviana para las ciclorrutas.
-    </p>
-    <p class="precio">$10.000 / hora</p>
-    <a href="paginas/reservas.html">Reservar</a>
-          </article>
+        <!--Los article representa cada una de las bicicleta como contenido independiente-->
+        <article class="tarjeta-bicicleta">
+          <img src="img/urbana_clasica.jpg" alt="Bicicleta urbana clásica">
+          <h3>Urbana Clásica</h3>
+          <p>
+            Cómoda y liviana para las ciclorrutas.
+          </p>
+          <p class="precio">$10.000 / hora</p>
+          <a href="paginas/reservas.html">Reservar</a>
+        </article>
 
-<article class="tarjeta-bicicleta">
-    <img src="img/urbana_plegable.jpg" alt="Bicicleta urbana plegable">
-    <h3>Urbana Plegable</h3>
-    <p>Se dobla en segundos; ideal para combinar con el metro.</p>
-    <p class="precio">$12.000 / hora</p>
-    <a href="paginas/reservas.html">Reservar</a>
-</article>
+        <article class="tarjeta-bicicleta">
+          <img src="img/urbana_plegable.jpg" alt="Bicicleta urbana plegable">
+          <h3>Urbana Plegable</h3>
+          <p>Se dobla en segundos; ideal para combinar con el metro.</p>
+          <p class="precio">$12.000 / hora</p>
+          <a href="paginas/reservas.html">Reservar</a>
+        </article>
 
-<article class="tarjeta-bicicleta">
-    <img src="img/montana_train.jpg" alt="Bicicleta de montaña Trail">
-    <h3>Montaña Trail</h3>
-    <p>Suspensión delantera y 21 cambios para las subidas.</p>
-    <p class="precio">$15.000 / hora</p>
-    <a href="paginas/reservas.html">Reservar</a>
-</article>
+        <article class="tarjeta-bicicleta">
+          <img src="img/montana_train.jpg" alt="Bicicleta de montaña Trail">
+          <h3>Montaña Trail</h3>
+          <p>Suspensión delantera y 21 cambios para las subidas.</p>
+          <p class="precio">$15.000 / hora</p>
+          <a href="paginas/reservas.html">Reservar</a>
+        </article>
 
-<article class="tarjeta-bicicleta">
-    <img src="img/gravel_aventura.jpg" alt="Bicicleta Gravel Aventura">
-    <h3>Gravel Aventura</h3>
-    <p>Para rutas mixtas de asfalto y destapado.</p>
-    <p class="precio">$18.000 / hora</p>
-    <a href="paginas/reservas.html">Reservar</a>
-</article>
+        <article class="tarjeta-bicicleta">
+          <img src="img/gravel_aventura.jpg" alt="Bicicleta Gravel Aventura">
+          <h3>Gravel Aventura</h3>
+          <p>Para rutas mixtas de asfalto y destapado.</p>
+          <p class="precio">$18.000 / hora</p>
+          <a href="paginas/reservas.html">Reservar</a>
+        </article>
 
-<article class="tarjeta-bicicleta">
-    <img src="img/Electrica_urbana.jpg" alt="Bicicleta eléctrica urbana">
-    <h3>Eléctrica Urbana</h3>
-    <p>Asistencia eléctrica con 45 km de autonomía.</p>
-    <p class="precio">$25.000 / hora</p>
-    <a href="paginas/reservas.html">Reservar</a>
-</article>
+        <article class="tarjeta-bicicleta">
+          <img src="img/Electrica_urbana.jpg" alt="Bicicleta eléctrica urbana">
+          <h3>Eléctrica Urbana</h3>
+          <p>Asistencia eléctrica con 45 km de autonomía.</p>
+          <p class="precio">$25.000 / hora</p>
+          <a href="paginas/reservas.html">Reservar</a>
+        </article>
 
-<article class="tarjeta-bicicleta">
-    <img src="img/infantil.jpg" alt="Bicicleta infantil">
-    <h3>Infantil</h3>
-    <p>Para niños de 6 a 10 años.</p>
-    <p class="precio">$8.000 / hora</p>
-    <a href="paginas/reservas.html">Reservar</a>
-</article>
+        <article class="tarjeta-bicicleta">
+          <img src="img/infantil.jpg" alt="Bicicleta infantil">
+          <h3>Infantil</h3>
+          <p>Para niños de 6 a 10 años.</p>
+          <p class="precio">$8.000 / hora</p>
+          <a href="paginas/reservas.html">Reservar</a>
+        </article>
 
-<article class="tarjeta-bicicleta">
-    <img src="img/Tandem.jpg" alt="Bicicleta Tándem para dos personas">
-    <h3>Tándem</h3>
-    <p>Para dos personas; perfecta para pasear en pareja.</p>
-    <p class="precio">$20.000 / hora</p>
-    <a href="paginas/reservas.html">Reservar</a>
-</article>
+        <article class="tarjeta-bicicleta">
+          <img src="img/Tandem.jpg" alt="Bicicleta Tándem para dos personas">
+          <h3>Tándem</h3>
+          <p>Para dos personas; perfecta para pasear en pareja.</p>
+          <p class="precio">$20.000 / hora</p>
+          <a href="paginas/reservas.html">Reservar</a>
+        </article>
 
-        </div>
+      </div>
     </section>
-
-
-
 
     <section>
       <h2>¿Cómo alquilar?</h2>
@@ -195,7 +220,8 @@
         <li>Elige la bicicleta que deseas alquilar.</li>
         <li>Consulta la disponibilidad y las tarifas.</li>
         <li>Reserva tu bicicleta por WhatsApp.</li>
-        <li>Recoge la bicicleta en el punto de encuentro, disfruta tu recorrido por Medellín y devuélvela en el horario acordado.</li>
+        <li>Recoge la bicicleta en el punto de encuentro, disfruta tu recorrido por Medellín y devuélvela en el horario
+          acordado.</li>
       </ol>
       <p><a href="paginas/reservas.html" class="btn-reservar">Reservar ahora</a></p>
 
@@ -215,47 +241,46 @@
       <img src="img/Ruta_Ciclovia.png" alt="Ruta en bicicleta por las calles de Medellín" width="200">
 
       <p>Explora Medellín sobre dos ruedas.
-        <a href="https://www.google.com/maps/search/?api=1&query=Medellin" target="_blank" rel="noopener noreferrer">Consulta el mapa de Medellín</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Medellin" target="_blank"
+          rel="noopener noreferrer">Consulta el mapa de Medellín</a>
       </p>
       <p>¿Tienes preguntas? <a href="mailto:hola@ruedalibre.example">Escríbenos por correo</a></p>
     </section>
   </main>
 
   <!--Pie de página - se agrego div porque son elementos flexibles que podemos distribuir horizontalmente-->
-<footer>
+  <footer>
     <div class="contenedor">
 
-        <div class="footer-marca">
-            <h3>Rueda Libre</h3>
-            <p>Todos los derechos reservados © 2026</p>
-        </div>
+      <div class="footer-marca">
+        <h3>Rueda Libre</h3>
+        <p>Todos los derechos reservados © 2026</p>
+      </div>
 
-        <div class="footer-contacto">
-            <h3>Contacto</h3>
-            <p>
-                <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>
-            </p>
-        </div>
+      <div class="footer-contacto">
+        <h3>Contacto</h3>
+        <p>
+          <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>
+        </p>
+      </div>
 
-        <div class="footer-horario">
-            <h3>Horario de atención</h3>
-            <p>Martes a viernes: 7:00 a. m. – 8:00 p. m.</p>
-            <p>Sábados y domingos: 6:00 a. m. – 8:00 p. m.</p>
-            <p>Lunes: Cerrado</p>
-        </div>
+      <div class="footer-horario">
+        <h3>Horario de atención</h3>
+        <p>Martes a viernes: 7:00 a. m. – 8:00 p. m.</p>
+        <p>Sábados y domingos: 6:00 a. m. – 8:00 p. m.</p>
+        <p>Lunes: Cerrado</p>
+      </div>
 
     </div>
-</footer>
+  </footer>
 
   <!--href es la dirección del enlace - la clase es para darle estilo - target abre el enlace en otra pestaña - noopener? para qué sirve? -->
-<!--noopener: evita que la página que abriste en otra pestaña pueda controlar la página original. noreferrer: evita que se envíe información sobre la página de origen al sitio que estás abriendo.-->
-<a href="https://wa.me/573000000000"
-   class="whatsapp-fijo"
-   target="_blank"
-   rel="noopener noreferrer">
+  <!--noopener: evita que la página que abriste en otra pestaña pueda controlar la página original. noreferrer: evita que se envíe información sobre la página de origen al sitio que estás abriendo.-->
+  <a href="https://wa.me/573000000000" class="whatsapp-fijo" target="_blank" rel="noopener noreferrer">
     WhatsApp
-</a>
+  </a>
 
 
 </body>
+
 </html>

@@ -1,88 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Reserva tu bicicleta en Rueda Libre, Medellín: formulario de reserva, datos de contacto y horario de atención">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservas | Rueda Libre</title>
-    
-    <!-- Conexión con Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Tipografías -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/styles.css">
+  <meta charset="UTF-8">
+  <meta name="description"
+    content="Reserva tu bicicleta en Rueda Libre, Medellín: formulario de reserva, datos de contacto y horario de atención">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservas | Rueda Libre</title>
+
+  <!-- Conexión con Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/styles.css">
 </head>
 
 <body>
   <header>
-    <div class= "contenedor"
-    <p><strong>Rueda Libre</strong></p>
-    <nav aria-label="Navegación principal">
+    <div class="contenedor">
+      <p><strong>Rueda Libre</strong></p>
       <!--aria-label sirve para darle un nombre descriptivo a un elemento HTML para las tecnologías de asistencia así no se confunde con otro nav por ejemplo-->
-      <ul id="menu">
-        <li><a href="../index.html">Inicio</a></li>
-        <li><a href="tarifas.html">Tarifas</a></li>
-        <li><a href="reservas.html" class="activo">Reservas</a></li>
-      </ul>
-    </nav>
+      <nav aria-label="Navegación principal">
+        <ul id="menu">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="tarifas.html">Tarifas</a></li>
+          <li><a href="reservas.html" class="activo">Reservas</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
   <main>
     <h1>Reserva tu bicicleta</h1>
     <p>Completa el formulario y confirmaremos tu reserva. También puedes escribirnos a
-      <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>.</p>
+      <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>.
+    </p>
+    <div class="layout-reservas">
+      <section>
+        <h2>Formulario de reserva</h2>
 
-    <section>
-      <h2>Formulario de reserva</h2>
+        <form action="#" method="post">
+          <!--Dejemos post de momento, luego lo conectamos a una base de datos-->
 
-      <form action="#" method="post">
-        <!--Dejemos post de momento, luego lo conectamos a una base de datos-->
+          <!--fieldset agrupa elementos del formulario por categorías-->
+          <fieldset>
+            <legend>Tus datos</legend>
 
-        <!--fieldset agrupa elementos del formulario por categorías-->
-        <fieldset>
-          <legend>Tus datos</legend>
+            <p>
+              <label for="nombre">Nombre completo</label><br>
+              <input type="text" id="nombre" name="nombre" minlength="3" autocomplete="name" placeholder="Ana Pérez"
+                required>
+            </p>
 
-          <p>
-            <label for="nombre">Nombre completo</label><br>
-            <input type="text" id="nombre" name="nombre" minlength="3" autocomplete="name" placeholder="Ana Pérez" required>
-          </p>
+            <div class="campos-cortos">
+              <p>
+                <label for="documento">Número de documento</label><br>
+                <input type="text" id="documento" name="documento" inputmode="numeric" minlength="6" maxlength="10"
+                  placeholder="Ingrese número" required>
+              </p>
 
-          <p>
-            <label for="documento">Número de documento</label><br>
-            <input type="text" id="documento" name="documento" inputmode="numeric" minlength="6" maxlength="10" placeholder="Ingrese número" required>
-          </p>
+              <p>
+                <label for="celular">Celular</label><br>
+                <input type="tel" id="celular" name="celular" minlength="10" maxlength="10" pattern="3[0-9]{9}"
+                  autocomplete="tel" placeholder="Ingrese celular" required>
+              </p>
+            </div>
+            <p>
+              <label for="correo">Correo electrónico</label><br>
+              <input type="email" id="correo" name="correo" autocomplete="email" placeholder="correo@ejemplo.com"
+                required>
+            </p>
 
-          <p>
-            <label for="correo">Correo electrónico</label><br>
-            <input type="email" id="correo" name="correo" autocomplete="email" placeholder="correo@ejemplo.com" required>
-          </p>
 
-          <p>
-            <label for="celular">Celular</label><br>
-            <input type="tel" id="celular" name="celular" minlength="10" maxlength="10" pattern="3[0-9]{9}" autocomplete="tel" placeholder="Ingrese celular" required>
-          </p>
-        </fieldset>
+          </fieldset>
 
-        <fieldset>
-          <legend>Tu alquiler</legend>
+          <fieldset>
+            <legend>Tu alquiler</legend>
 
-          <p>
-            <label for="fecha">Fecha del alquiler</label><br>
-            <input type="date" id="fecha" name="fecha" min="2026-11-01" max="2026-12-31" required>
-          </p>
+            <p>
+              <label for="fecha">Fecha del alquiler</label><br>
+              <input type="date" id="fecha" name="fecha" min="2026-11-01" max="2026-12-31" required>
+            </p>
 
-          <p>
-            <label for="tipo-bicicleta">Tipo de bicicleta</label><br>
-            <select id="tipo-bicicleta" name="tipo_bicicleta" requiered>
-              <option value="">Selecciona una opción</option>
-              <option value="urbana">Urbana</option>
-              <option value="montana">Montaña</option>
-              <option value="electrica">Eléctrica</option>
-            </select>
-          </p>
-        </fieldset>
+            <p>
+              <label for="tipo-bicicleta">Tipo de bicicleta</label><br>
+              <select id="tipo-bicicleta" name="tipo_bicicleta" required>
+                <option value="">Selecciona una opción</option>
+                <option value="urbana">Urbana</option>
+                <option value="montana">Montaña</option>
+                <option value="electrica">Eléctrica</option>
+              </select>
+            </p>
+          </fieldset>
           <fieldset>
             <legend>Plan</legend>
             <p>
@@ -98,85 +109,90 @@
               <label for="plan-dia">Día completo</label>
             </p>
 
-          <p>
-            <label for="cantidad">Cantidad de bicicletas</label><br>
-            <input type="number" id="cantidad" name="cantidad" min="1" max="6" value="1">
-          </p>
-
-          <p>
-            <label for="recorrido">Recorrido guiado</label><br>
-            <select id="recorrido" name="recorrido">
-              <option value="ninguno">Ninguno</option>
-              <option value="rio-y-parques">Río y Parques</option>
-              <option value="sabores-de-barrio">Sabores de Barrio</option>
-              <option value="reto-las-palmas">Reto Las Palmas</option>
-            </select>
-          </p>
-        </fieldset>
-
-        <fieldset>
-          <legend>Confirmación</legend>
-
-          <p>
-            <label for="comentarios">Comentarios</label><br>
-            <textarea id="comentarios" name="comentarios" maxlength="300" rows="4" cols="40"></textarea>
-          </p>
-
-          <p>
-            <input type="checkbox" id="politicas" name="politicas" value="aceptadas" required>
-            <label for="politicas">Acepto las políticas de alquiler</label>
-            <input type="checkbox" id="Tratamiento de datos personales" name="Tratamiento de datos personales" value="aceptadas" required>
-            <label for="Tratamiento de datos personales">Acepta las politícas de tratamiento de datos personales</label>
-          </p>
-        </fieldset>
-
-        <button type="submit">Enviar reserva</button>
-      </form>
-    </section>
-
-    <aside>
-      <h2>Horario de atención</h2>
-      <dl>
-        <dt>Martes a viernes</dt>
-        <dd>7:00 a. m. a 7:00 p. m.</dd>
-        <dt>Sábados, domingos y festivos</dt>
-        <dd>6:00 a. m. a 2:00 p. m.</dd>
-      </dl>
-    </aside>
-  </main>
-
- <footer>
-    <div class="contenedor">
-
-        <div class="footer-marca">
-            <h3>Rueda Libre</h3>
-            <p>Todos los derechos reservados © 2026</p>
-        </div>
-
-        <div class="footer-contacto">
-            <h3>Contacto</h3>
             <p>
-                <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>
+              <label for="cantidad">Cantidad de bicicletas</label><br>
+              <input type="number" id="cantidad" name="cantidad" min="1" max="6" value="1">
             </p>
-        </div>
 
-        <div class="footer-horario">
-            <h3>Horario de atención</h3>
-            <p>Martes a viernes: 7:00 a. m. – 8:00 p. m.</p>
-            <p>Sábados y domingos: 6:00 a. m. – 8:00 p. m.</p>
-            <p>Lunes: Cerrado</p>
-        </div>
+            <p>
+              <label for="recorrido">Recorrido guiado</label><br>
+              <select id="recorrido" name="recorrido">
+                <option value="ninguno">Ninguno</option>
+                <option value="rio-y-parques">Río y Parques</option>
+                <option value="sabores-de-barrio">Sabores de Barrio</option>
+                <option value="reto-las-palmas">Reto Las Palmas</option>
+              </select>
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Confirmación</legend>
+
+            <p>
+              <label for="comentarios">Comentarios</label><br>
+              <textarea id="comentarios" name="comentarios" maxlength="300" rows="4" cols="40"></textarea>
+            </p>
+
+            <p>
+              <input type="checkbox" id="politicas" name="politicas" value="aceptadas" required>
+              <label for="politicas">Acepto las políticas de alquiler</label>
+              <input type="checkbox" id="Tratamiento de datos personales" name="Tratamiento de datos personales"
+                value="aceptadas" required>
+
+              <label for="Tratamiento de datos personales">
+                Acepta las politícas de tratamiento de datos personales
+              </label>
+            </p>
+          </fieldset>
+
+          <button type="submit">Enviar reserva</button>
+        </form>
+      </section>
+
+      <aside>
+        <h2>Horario de atención</h2>
+        <dl>
+          <dt>Martes a viernes</dt>
+          <dd>7:00 a. m. a 8:00 p. m.</dd>
+          <dt>Sábados, domingos y festivos</dt>
+          <dd>6:00 a. m. a 2:00 p. m.</dd>
+          <dt>Lunes: Cerrado</dt>
+        </dl>
+      </aside>
 
     </div>
-</footer>
+  </main>
+
+  <footer>
+    <div class="contenedor">
+
+      <div class="footer-marca">
+        <h3>Rueda Libre</h3>
+        <p>Todos los derechos reservados © 2026</p>
+      </div>
+
+      <div class="footer-contacto">
+        <h3>Contacto</h3>
+        <p>
+          <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>
+        </p>
+      </div>
+
+      <div class="footer-horario">
+        <h3>Horario de atención</h3>
+        <p>Martes a viernes: 7:00 a. m. – 8:00 p. m.</p>
+        <p>Sábados y domingos y festivos: 6:00 a. m. – 2:00 p. m.</p>
+        <p>Lunes: Cerrado</p>
+      </div>
+
+    </div>
+  </footer>
 
 
-<a href="https://wa.me/573000000000"
-   class="whatsapp-fijo"
-   target="_blank"
-   rel="noopener noreferrer">
+  <a href="https://wa.me/573000000000" class="whatsapp-fijo" target="_blank" rel="noopener noreferrer">
     WhatsApp
-</a>
+  </a>
 
 </body>
+
 </html>

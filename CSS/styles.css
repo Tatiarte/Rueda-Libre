@@ -1,7 +1,7 @@
 /* ========================================
    1. VARIABLES GLOBALES
    ======================================== */
- 
+
 /* :root es el selector donde declaramos variables globales*/
 /* var() es la función que nos permite llamar a las variables declaradas en :root por ejemplo var(--color-cream) */
 :root {
@@ -12,29 +12,29 @@
     --color-route-green: #1E7A4F;
     --color-pedal-orange: #F39A2B;
     --color-white: #FFFFFF;
- 
+
     /* Tipografías */
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
- 
+
     /* Espaciados */
     --spacing-small: 0.5rem;
     --spacing-medium: 1rem;
     --spacing-large: 2rem;
 }
- 
- 
+
+
 /* ========================================
    2. ESTILOS BASE
    ======================================== */
- 
+
 /* agregamos el box-sizing quiere decir que el ancho y alto de los elementos incluirá el padding y el borde */
 /* estamos indicando que todos los elementos deben calcular su ancho incluyendo el padding y el borde.*/
 /* content-box es el comportamiento predeterminado*/
 * {
     box-sizing: border-box;
 }
- 
+
 body {
     /* font-family: establece Open Sans como fuente principal para el cuerpo del documento */
     font-family: var(--font-body);
@@ -45,31 +45,36 @@ body {
     margin: 0;
     padding: 0;
 }
- 
+
 /* Tipografia de encabezados */
 /* Aqui aplicamos la herencia porque en el body ya habiamos establecido la fuente Open Sans, y ahora para los encabezados queremos que */
 /* sea Montserrat, entonces se aplica la herencia de la fuente del body a los encabezados y luego se sobreescribe con la fuente Montserrat */
 /* es decir, le establecimos una regla especifica sobre la que ya tenia el body */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     /* font-family: establece Montserrat como fuente principal para los encabezados */
     font-family: var(--font-heading);
     /* color de texto*/
     color: var(--color-night-blue);
 }
- 
+
 /* Enlaces */
 a {
     color: var(--color-route-green);
 }
- 
-/* Nuestra flota - CSS Grid */ 
+
+/* Nuestra flota - CSS Grid */
 /* Aquí activamos grid, le indicamos al navegador que ese elemento será un contenedor de cuadrícula. */
 /*Sus hijos directos —en nuestro caso, los siete <article>— se convierten en elementos de Grid */
 .grid-flota {
     display: grid;
-/* grid-template-columns es una propiedad que define cuántas columnas tendrá nuestra cuadrícula y cuánto espacio ocupará cada una */
-/* repeat significa repetición de configuración de columnas- auto- fit ajusta la cantidad de columnas según el espacio disponible*/
-/* minmax establece que cada columna tendrá un minimo de 250px y podrá crecer*/
+    /* grid-template-columns es una propiedad que define cuántas columnas tendrá nuestra cuadrícula y cuánto espacio ocupará cada una */
+    /* repeat significa repetición de configuración de columnas- auto- fit ajusta la cantidad de columnas según el espacio disponible*/
+    /* minmax establece que cada columna tendrá un minimo de 250px y podrá crecer*/
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--spacing-large);
 }
@@ -83,11 +88,11 @@ a {
 .tarjeta-bicicleta {
     display: flex;
     flex-direction: column;
-/* Distribuye el espacio libre entre los elementos, dejando el primero arriba y el último abajo.*/
+    /* Distribuye el espacio libre entre los elementos, dejando el primero arriba y el último abajo.*/
     justify-content: space-between;
-/* agrega espacio entre el contenido y los bordes de la tarjeta.*/
+    /* agrega espacio entre el contenido y los bordes de la tarjeta.*/
     padding: var(--spacing-medium);
-/* dibuja un borde de 1 píxel, sólido y de color gris.*/
+    /* dibuja un borde de 1 píxel, sólido y de color gris.*/
     border: 1px solid var(--color-asphalt-gray);
     border-radius: 8px;
 }
@@ -96,7 +101,7 @@ a {
 /* ========================================
    3. LAYOUT (contenedores)
    ======================================== */
- 
+
 /* .contenedor modifica el header y el footer*/
 /* max-width este ancho es pensando en pantallas grandes - ¿en funcion de la responsividad? */
 /* margin es que centra horizontalmente el contenedor*/
@@ -105,7 +110,7 @@ a {
     max-width: 75rem;
     margin: 0 auto;
 }
- 
+
 /* width establece un ancho (90% para que se adapte a pantallas pequeñas) - max-width (75rem - evita que se extienda demasiado en */
 /* pantallas grandes) establece un ancho máximo - min-width establece un ancho mínimo y margin: 0 auto lo centra*/
 main {
@@ -115,18 +120,18 @@ main {
     /* esto sirve para que el botón de wts no tape elementos del footer*/
     padding-bottom: 5rem;
 }
- 
- 
+
+
 /* ========================================
    4. ENCABEZADO Y NAVEGACIÓN
    ======================================== */
- 
+
 header {
     background-color: var(--color-night-blue);
     color: var(--color-white);
     padding: var(--spacing-medium) 0;
 }
- 
+
 /* Esto lo que hizo es poner el titulo Rueda Libre y el nav como elementos del display flex*/
 /* básicamente lo que hizo fue distibuir el espacio disponible entre ellos con*/
 /* justify-content: space-between para eso se uso estos elementos para decirle que los elementos se desplacen a los extremos*/
@@ -135,14 +140,15 @@ header .contenedor {
     justify-content: space-between;
     align-items: center;
 }
- 
+
 /* Esto elimina los márgenes del párrafo y los márgenes y el espacio interno de la lista.*/
 header p {
     margin: 0;
 }
- 
 
-/* MODIFICAMOS CSS EN FUNCIÓN DE FLEX BOX*/ /* Para revisar la responsibidad en el navegador Ctrl + Shift + M */
+
+/* MODIFICAMOS CSS EN FUNCIÓN DE FLEX BOX*/
+/* Para revisar la responsibidad en el navegador Ctrl + Shift + M */
 /* agregando display flex - flex- wrap y gap ya no tenemos que tener el elemento display: inline-block de los li de #menu y los borramos del css*/
 #menu {
     /* organiza los elementos li en una misma fila*/
@@ -155,24 +161,24 @@ header p {
     padding: 0;
     list-style: none;
 }
- 
- 
+
+
 /* Este es el color normal del #menu*/
 #menu a {
     color: var(--color-white);
 }
- 
+
 /* Identifica la página en la que se encuentra el usuario */
 #menu a.activo {
     color: var(--color-pedal-orange);
     font-weight: 600;
 }
- 
+
 /* Aquí modificamos el estilo del #menu -Hover sirve para activar un texto cuando colocas el cursor del mouse sobre este elemento*/
 #menu a:hover {
     color: var(--color-pedal-orange);
 }
- 
+
 /* Aquí también modificamos el estilo pero en función del focus, sirve para activar cuando seleccionas un elemento mediante el teclado, por ejemplo usando tab*/
 #menu a:focus {
     /* color cambia el color de texto cuando el enlace recibe el foco*/
@@ -182,17 +188,22 @@ header p {
     /* outline-offset separa un poco el contorno del enlace para que sea más visible*/
     outline-offset: 4px;
 }
- 
- 
+
+
 /* ========================================
    5. PORTADA
    ======================================== */
- 
-/* min-height establece la altura mínima de la sección. 100vh es la altura de la ventana, 80vh el 80% de la altura de la ventana visible (aquí usamos 50vh)*/
+
+/* min-height establece la altura mínima de la sección. 50vh es la altura de la ventana, */
+/*80vh el 80% de la altura de la ventana visible (aquí usamos 50vh)*/
 .portada {
     min-height: 50vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-large);
+    align-items: center;
 }
- 
+
 .portada img {
     width: 100%;
     max-width: 1000px;
@@ -200,12 +211,12 @@ header p {
     display: block;
     border-radius: 5px;
 }
- 
- 
+
+
 /* ========================================
    6. BOTONES
    ======================================== */
- 
+
 /* Botones */
 /* Aqui estoy usando las variables que use anteriormente en el :root*/
 button {
@@ -216,7 +227,7 @@ button {
     padding: var(--spacing-large);
     cursor: pointer;
 }
- 
+
 /* Aquí tenemos el estilo que definimos en la clase .btn-reservar como se puede ver tiene la apariencia de un botón aunque no lo sea*/
 .btn-reservar {
     /* permite aplicar dimensiones y espaciado al enlace*/
@@ -235,13 +246,13 @@ button {
     /* Redondea las esquinas*/
     border-radius: 5px;
 }
- 
+
 /* Al igual que con #menu- aquí usamos hover para cambiar el color cuando pasamos el cursor del mouse por el texto*/
 .btn-reservar:hover {
     background-color: var(--color-night-blue);
     color: var(--color-white);
 }
- 
+
 /* Y el focus para que cambie de estilo cuando pasamos por el enlace con tab*/
 .btn-reservar:focus {
     background-color: var(--color-night-blue);
@@ -249,12 +260,29 @@ button {
     outline: 2px solid var(--color-pedal-orange);
     outline-offset: 4px;
 }
- 
- 
+
+/* ========================================
+   TARJETAS DE RUTAS // se hizo con Grid
+   ======================================== */
+.grid-rutas {
+    display: grid;
+    /* grid- template- columns: repeat (3, 1fr) me esta indicando que las columnas van a permanecer de a tres por fila aunque le cambie el ancho 
+    /* a la pantalla, por el contrario si uso repeat(auto-fit, minmax(250px, 1fr)) ajusta las columnas dependiendo del ancho de la pantalla*/
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-large);
+}
+
+.tarjeta-ruta img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
 /* ========================================
    7. SERVICIOS (tarjetas)
    ======================================== */
- 
+
 /* .servicios es la clase que creamos en el index.html para darle estilos a todos los article de la section Nuestros servicios*/
 /* padding crea espacios entre el contenido de la tarejta (image, título y texto) y sus bordes */
 /* var(--spacing-medium) es la variable que declaramos en :root para establecer un espaciado medio*/
@@ -269,13 +297,13 @@ button {
     /* esta posición relativa permite ubicar la etiqueta "Nuevo" en una posición específica dentro de la tarjeta*/
     position: relative;
 }
- 
+
 /* Tati, recuerda que gracias a box-sizing: border-box, el ancho de la tarjeta incluye su padding y sus bordes. NO LO OLVIDES*/
 /* width: 80% hace que la imagen ocupe el 80% del ancho disponible dentro de la tarjeta*/
 .servicios img {
     width: 80%;
 }
- 
+
 .etiqueta-nuevo {
     /* fondo naranja*/
     background-color: var(--color-pedal-orange);
@@ -294,12 +322,12 @@ button {
     /* establece la distancia desde la parte derecha de la tarjeta*/
     right: var(--spacing-small);
 }
- 
- 
+
+
 /* ========================================
    8. TARIFAS (tablas)
    ======================================== */
- 
+
 /* Aquí le damos estilo a la sección de tarifas, para que las tablas se vean mejor*/
 /* table th selecciona las celdas que funcionan como encabezados*/
 /* table td selecciona las celdas que contienen datos*/
@@ -309,7 +337,7 @@ table td {
     padding: var(--spacing-small);
     border: 1px solid var(--color-asphalt-gray);
 }
- 
+
 /* table significa que selecciona la tabla completa, thead significa que selecciona el encabezado de la tabla, */
 /* background-color establece el color de fondo del encabezado de la tabla y */
 /* color establece el color del texto del encabezado de la tabla*/
@@ -317,12 +345,12 @@ table thead {
     background-color: var(--color-night-blue);
     color: var(--color-white);
 }
- 
- 
+
+
 /* ========================================
    9. FORMULARIO
    ======================================== */
- 
+
 /* Aquí pasaré a modificar el estilo del formulario - aquí lo que hago es utilizar selectores agrupados*/
 /* quiere decir que, en lugar de una regla para cada elemento, separamos los selectores con comas y aplicamos la misma propiedad*/
 input:focus,
@@ -331,15 +359,15 @@ select:focus {
     outline: 2px solid var(--color-route-green);
     outline-offset: 3px;
 }
- 
+
 /* display: block hace que cada etiqueta de label se comporte como un bloque independiente y eso hace que ocupe su propia línea por eso*/
 /* en el campo siguiente aparece debajo*/
 /* form busca dentro del formulario - p busca los párrafos que contiene cada grupo - > indica que queremos seleccionar los elementos que son hijos directos*/
 /* label selecciona las etiquetas*/
-form p > label {
+form p>label {
     display: block;
 }
- 
+
 /* form busca dentro del formulario - input busca los campos de entrada de texto, */
 /* select busca los menús desplegables y textarea selecciona el área de comentarios */
 /* OJO TATI: no modificaste los radio y checkbox porque así estirados se verían horribles*/
@@ -350,26 +378,48 @@ form textarea {
     /* agregue el max-width para que establezca un límite para el ancho disponible y no se vea tan feito*/
     max-width: 40rem;
 }
- 
+
 /* margin-bottom agrega un espacio debajo de cada grupo de campos del formulario para separarlos entre sí*/
 /* var(--spacing-large) es la variable que declaramos en :root para establecer un espaciado grande*/
 /* TATI recuerda que declarar variables y escribir reglas de estilo son dos cosas diferentes NO LAS MEZCLES*/
 form fieldset {
     margin-bottom: var(--spacing-large);
 }
- 
- 
+
+    /* Grid para distribuir el espacio del formulario en la página reservas*/
+.layout-reservas {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-large);
+}
+
+/* Apariencia del recuadro del horario */
+.layout-reservas aside {
+    padding: var(--spacing-large);
+    border: 1px solid var(--color-asphalt-gray);
+    border-radius: 8px;
+    background-color: var(--color-white);
+    align-self: start;
+}
+
+/* Aquí cree una clase con un div para agrupar el celular y número de documento*/
+.campos-cortos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-medium);
+}
+
 /* ========================================
    10. BOTÓN FIJO DE WHATSAPP
    ======================================== */
- 
+
 /* fixed fija el elemento respecto a la ventana del navegador.*/
 /* right establece la distancia desde la derecha. bottom establece la distancia desde abajo. */
 .whatsapp-fijo {
     position: fixed;
     right: var(--spacing-medium);
     bottom: var(--spacing-medium);
- 
+
     background-color: var(--color-route-green);
     color: var(--color-white);
     padding: var(--spacing-medium);
@@ -377,22 +427,22 @@ form fieldset {
     text-decoration: none;
     font-weight: 600;
 }
- 
+
 .whatsapp-fijo:hover {
     background-color: var(--color-pedal-orange);
     color: var(--color-white);
 }
- 
+
 .whatsapp-fijo:focus {
     outline: 2px solid var(--color-pedal-orange);
     outline-offset: 4px;
 }
- 
- 
+
+
 /* ========================================
    11. FOOTER
    ======================================== */
- 
+
 footer {
     background-color: var(--color-night-blue);
     color: var(--color-white);
@@ -402,23 +452,23 @@ footer {
 /* AQUI AGREGAMOS PROPIEDADES FLEX BOX*/
 
 footer .contenedor {
-/* Coloca los tres bloques en una fila*/
+    /* Coloca los tres bloques en una fila*/
     display: flex;
-/* 	Distribuye el espacio entre los bloques*/
+    /* 	Distribuye el espacio entre los bloques*/
     justify-content: space-between;
-/* 	Alinea los bloques desde arriba */
+    /* 	Alinea los bloques desde arriba */
     align-items: flex-start;
-/* 	Permite que los bloques bajen a otra fila si no hay espacio */
+    /* 	Permite que los bloques bajen a otra fila si no hay espacio */
     flex-wrap: wrap;
-/* 	Establece separación entre los bloques */
+    /* 	Establece separación entre los bloques */
     gap: var(--spacing-large);
 }
- 
+
 /* Esto modifica el color del enlace del correo para que se vea más*/
 footer a {
     color: var(--color-white);
 }
- 
+
 footer a:hover {
     color: var(--color-pedal-orange);
 }

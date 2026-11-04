@@ -309,3 +309,65 @@ Comprobé el comportamiento del Grid utilizando el modo dispositivo de las herra
 - 500 px: 1 columna.
 
 También agregué una séptima bicicleta (Tándem) y comprobé que la cuadrícula se reorganizara automáticamente sin modificar el CSS.
+
+RECORDATORIO
+Flexbox: resulta especialmente útil para organizar elementos en una dimensión (una fila o una columna).
+Grid: permite organizar elementos en dos dimensiones (filas y columnas).
+
+MiniReto 3 – Distribución de páginas con Grid y Flexbox
+Objetivo
+Organizar las diferentes secciones del sitio Rueda Libre utilizando CSS Grid y Flexbox, distribuyendo los elementos de manera ordenada y 
+aprovechando el espacio disponible.
+
+Desarrollo
+1. Portada – CSS Grid: Se organizó la portada en dos columnas: el título y el texto a la izquierda y la imagen a la derecha.
+- Se utilizaron display: grid, grid-template-columns: 1fr 1fr, gap y align-items: center.
+- Se eligió Grid porque se necesitaba distribuir dos elementos en columnas y alinearlos verticalmente.
+
+2. Galería de rutas – CSS Grid: Se creó la sección «Nuestras rutas», con tres tarjetas: Cerro El Volador, Ciclovía Bello–Itagüí y Medellín–Caldas.
+- Se utilizó grid-template-columns: repeat(3, 1fr) para distribuir las tres tarjetas en una misma fila y gap para establecer el espacio entre ellas.
+- Se eligió Grid porque permite organizar las tarjetas en una estructura de filas y columnas.
+
+3. Página de reservas – CSS Grid: Se organizó el formulario junto con la información del horario de atención, utilizando dos columnas con una proporción de `2fr 1fr`.
+
+El formulario ocupa dos tercios del espacio y el horario el tercio restante.
+
+Se eligió Grid porque se necesitaba distribuir dos secciones con diferentes proporciones.
+
+**4. Campos del formulario – CSS Grid**
+
+Se agruparon los campos «Número de documento» y «Celular» dentro de un contenedor con la clase `campos-cortos`.
+
+Se utilizó `grid-template-columns: repeat(2, 1fr)` para ubicarlos en una misma fila, con un espacio entre ambos mediante `gap`.
+
+Se eligió Grid porque se necesitaban dos columnas del mismo tamaño dentro del formulario.
+
+**5. Encabezado – Flexbox**
+
+Se conservó Flexbox para organizar horizontalmente la marca Rueda Libre y el menú de navegación.
+
+Se utilizaron propiedades como `display: flex`, `justify-content`, `align-items` y `gap`.
+
+Se eligió Flexbox porque los elementos se distribuyen principalmente en una sola dimensión: una fila horizontal.
+
+**6. Pie de página – Flexbox**
+
+Se conservó Flexbox para distribuir los bloques de marca, contacto y horario de atención.
+
+Se utilizaron propiedades como `display: flex`, `justify-content: space-between`, `align-items`, `flex-wrap` y `gap`.
+
+Se eligió Flexbox porque permite organizar los bloques en una dirección y acomodarlos en varias filas cuando el espacio disponible disminuye.
+
+### Aprendizajes
+
+En este reto comprendí mejor las diferencias entre CSS Grid y Flexbox.
+
+Grid permite organizar elementos en filas y columnas, mientras que Flexbox resulta especialmente útil para distribuir elementos en una sola dirección, ya sea horizontal o vertical.
+
+También practiqué el uso de `fr`, `repeat()`, `grid-template-columns`, `gap`, `align-items` y `justify-content` para controlar la distribución de los elementos.
+
+### Pruebas
+
+Se verificó la distribución de dos columnas en la portada, las tres tarjetas de rutas en una fila y la proporción 2:1 de la página de reservas.
+
+También se comprobó que la distribución de las columnas de reservas se mantiene al modificar el ancho de la ventana.
