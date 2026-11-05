@@ -371,15 +371,30 @@ button {
 /* ========================================
    8. TARIFAS (tablas)
    ======================================== */
-
-/* Aquí le damos estilo a la sección de tarifas, para que las tablas se vean mejor*/
-/* table th selecciona las celdas que funcionan como encabezados*/
-/* table td selecciona las celdas que contienen datos*/
-/* padding crea el espacio entre el texto y los bordes de cada celda*/
-table th,
+/* SE REEMPLAZA EN FUNCIÓN DE MOVIL MINIRETO 4*/
+/* Aquí le damos estilo a la sección de tarifas, para que las tablas se vean mejor- table th selecciona las celdas que funcionan como encabezados*/
+/* table td selecciona las celdas que contienen datos - padding crea el espacio entre el texto y los bordes de cada celda*/
+/*table th,
 table td {
     padding: var(--spacing-small);
     border: 1px solid var(--color-asphalt-gray);
+}
+
+/* MÓVIL: tablas de tarifas */
+table {
+    width: 100%;
+    /* evita que los bordes de las celdas queden separados*/
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+table th,
+table td {
+    padding: 0.25rem;
+    border: 1px solid var(--color-asphalt-gray);
+    font-size: 0.75rem;
+    /* permite dividir palabras cuando no caben en una celda*/
+    overflow-wrap: anywhere;
 }
 
 /* table significa que selecciona la tabla completa, thead significa que selecciona el encabezado de la tabla, */
@@ -603,4 +618,14 @@ footer a:hover {
         grid-template-columns: 2fr 1fr;
     }
 
+    /* TABLET Y ESCRITORIO: tablas */
+    table {
+    table-layout: auto;
+    }
+
+    table th,
+    table td {
+    padding: var(--spacing-small);
+    font-size: 1rem;
+}
 }
