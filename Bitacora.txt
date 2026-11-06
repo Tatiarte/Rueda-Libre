@@ -371,3 +371,104 @@ También practiqué el uso de `fr`, `repeat()`, `grid-template-columns`, `gap`, 
 Se verificó la distribución de dos columnas en la portada, las tres tarjetas de rutas en una fila y la proporción 2:1 de la página de reservas.
 
 También se comprobó que la distribución de las columnas de reservas se mantiene al modificar el ancho de la ventana.
+
+
+MINIRETO 4 - Diseño responsive y enfoque Mobile First
+
+Objetivo: Adaptar el sitio web Rueda Libre para que funcione correctamente en celulares, tablets y computadores, utilizando el enfoque Mobile First, 
+media queries e imágenes fluidas.
+
+Desarrollo:
+
+1. Enfoque Mobile First
+
+Se reorganizó el archivo `styles.css` para establecer primero los estilos correspondientes a dispositivos móviles y posteriormente adaptar la distribución a pantallas más grandes.
+Se utilizaron media queries con `min-width` para establecer dos puntos de adaptación:
+
+- Tablet: 768 px.
+- Escritorio: 1200 px.
+
+De esta manera, los estilos base corresponden a la versión móvil y las media queries modifican únicamente las propiedades necesarias para pantallas más amplias.
+
+2. Encabezado y navegación – Flexbox
+
+-En dispositivos móviles se organizó el nombre de Rueda Libre en la parte superior y el menú de navegación debajo, centrado horizontalmente.
+-Se utilizaron las propiedades `flex-direction: column` y `align-items: center`.
+-Desde los 768 px se recuperó la distribución del MiniReto 1, ubicando el nombre del negocio y el menú en extremos opuestos, utilizando `flex-direction: row` y `justify-content: space-between`.
+-También se conservó `flex-wrap` en el menú para permitir que los enlaces pasen a otra línea cuando no hay suficiente espacio.
+
+3. Pie de página – Flexbox
+En móviles, los tres bloques del footer (marca, contacto y horario) se organizaron verticalmente y centrados.
+Desde los 768 px se recuperó la distribución horizontal del MiniReto 1, utilizando `justify-content: space-between`, `align-items: flex-start` y `flex-wrap: wrap`.
+
+4. Portada – CSS Grid
+En móviles se estableció una sola columna para mostrar primero el texto y después la imagen.
+A partir de los 1200 px se recuperó la distribución de dos columnas del MiniReto 3 mediante `grid-template-columns: 1fr 1fr`.
+
+5. Galería de rutas – CSS Grid
+Se adaptó la galería «Nuestras rutas» para que las tres tarjetas se organizaran en una sola columna en móviles.
+En tablet se establecieron dos columnas utilizando `repeat(2, 1fr)` y en escritorio se recuperaron las tres columnas con `repeat(3, 1fr)`.
+
+6. Página de reservas – CSS Grid
+En móviles, el formulario y el horario de atención se organizaron en una sola columna.
+En escritorio, a partir de los 1200 px, se recuperó la distribución de dos tercios para el formulario y un tercio para el horario, utilizando `grid-template-columns: 2fr 1fr`.
+También se adaptaron los campos de número de documento y celular: en móviles aparecen uno debajo del otro y desde 768 px comparten una misma fila.
+
+7. Tablas de tarifas
+Se modificaron los estilos de las tablas para facilitar su lectura en dispositivos móviles.
+Se ajustaron el relleno de las celdas (`padding`) y el tamaño de letra (`font-size`). También se utilizaron `width: 100%`, `table-layout: fixed` y `overflow-wrap: anywhere` para aprovechar el espacio disponible y evitar que el contenido se desbordara horizontalmente.
+Desde los 768 px se recuperaron el tamaño de letra y el relleno anteriores.
+
+8. Imágenes fluidas
+Se agregó una regla general para todas las imágenes del sitio:
+
+- `max-width: 100%`.
+- `height: auto`.
+
+Esto permite que las imágenes se adapten al ancho de sus contenedores y mantengan sus proporciones originales, evitando que se salgan del espacio disponible.
+
+Problemas responsive encontrados y soluciones:
+
+Problema 1: La portada mantenía dos columnas en pantallas pequeñas.**
+Solución: se modificó `grid-template-columns` para establecer una sola columna en los estilos base y recuperar las dos columnas mediante la media query de 1200 px.
+
+Problema 2: Las tres tarjetas de rutas quedaban demasiado estrechas en móviles.**
+Solución: se reorganizó la galería para mostrar una columna en móviles, dos en tablet y tres en escritorio.
+
+Problema 3: El formulario y el horario de atención conservaban la proporción 2:1 en pantallas pequeñas.**
+Solución: se estableció una sola columna para móviles y se recuperó la proporción 2:1 en escritorio.
+
+Problema 4: Los campos de documento y celular ocupaban demasiado espacio al estar en dos columnas en móviles.**
+Solución: se organizaron en una sola columna para celulares y se recuperaron las dos columnas desde los 768 px.
+
+Problema 5: Las tablas de tarifas necesitaban demasiado espacio horizontal para mostrar toda la información.**
+Solución: se redujo el tamaño de letra y el relleno de las celdas, y se ajustó la distribución de las columnas para facilitar su lectura en pantallas pequeñas.
+
+Pruebas responsive
+Se utilizó el modo dispositivo de DevTools para comprobar el comportamiento del sitio en diferentes anchos:
+
+| Ancho de pantalla | Comportamiento comprobado |
+|---|---|
+| 360 px | Diseño móvil en una columna, contenido legible e imágenes dentro de sus contenedores. |
+| 768 px | Recuperación de la distribución horizontal del encabezado y footer, dos columnas en la galería y en los campos cortos. |
+| 1280 px | Recuperación de la portada en dos columnas, galería en tres columnas y reservas en proporción 2:1. |
+
+También se verificó que las tablas de tarifas se ajustaran al espacio disponible.
+
+
+Minireto: Primera comparación con Bootstrap
+Implementación: Se creó pruebas/catalogo-bootstrap.html utilizando Bootstrap 5.3 mediante CDN y su sistema de grillas.
+Pruebas responsivas:
+390 px: una tarjeta por fila.
+768 px: dos tarjetas por fila.
+1024 px: tres tarjetas por fila.
+1280 px: cuatro tarjetas por fila.
+
+Verificación de recursos: Los archivos bootstrap.min.css y bootstrap.bundle.min.js cargaron correctamente con estado HTTP 200.
+Comparación de código:
+CSS propio: 3 declaraciones para distribuir la flota (display, grid-template-columns y gap).
+Bootstrap: 6 clases de grilla y espaciado (row, g-4, col-12, col-sm-6, col-lg-4, col-xl-3).
+Tiempo: No se registró una medición exacta, pero la implementación con Bootstrap tomó considerablemente menos tiempo.
+Conclusiones: Bootstrap permitió implementar rápidamente una distribución responsiva sin escribir CSS propio. Sin embargo, 
+ofrece menos libertad para definir el comportamiento exacto de la cuadrícula, pues utiliza puntos de quiebre preestablecidos. 
+Con CSS Grid propio se tiene mayor control sobre la adaptación automática de las columnas.
