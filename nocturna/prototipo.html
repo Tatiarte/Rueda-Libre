@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rueda Nocturna</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <main>
+        <!--bg-neutral-950	Fondo negro muy oscuro - text-white	Color blanco para los textos - p-8	Espaciado interno de 32 píxeles.-->
+        <!--Importante: p-8 es una utilidad de espaciado (padding). No estamos escribiendo CSS, sino aplicando directamente una clase de Tailwind.-->
+        <section class="bg-neutral-950 text-white p-8">
+
+
+            <!--mx-auto	Centra horizontalmente el contenedor - w-full Ocupa el 100% del ancho disponible - max-w-5xl Limita el ancho máximo del contenido.
+        space-y-8 Separa verticalmente los elementos hijos.-->
+            <!--Una diferencia: w-full establece el ancho disponible, 
+        mientras que max-w-5xl establece un límite para que el contenido no se extienda demasiado.-->
+            <div class="mx-auto w-full max-w-5xl space-y-8">
+
+                <!--bg-amber-400 significa fondo ámbartext-neutral-950 significa texto oscuro -px-3 significa espaciado horizontal
+                py-2 significa espaciado vertical - text-xs significa texto pequeño - font-bold significa texto en negrita 
+                uppercase significa texto en mayúsculas - tracking-widest significa espacio entre caracteres amplio-->
+                <p class="inline-block bg-amber-400 text-neutral-950 px-3 py-2 text-xs font-bold uppercase tracking-widest">
+                    Nuevo · Jueves a sábado
+                </p>
+                <!--text-5xl	Aumenta considerablemente el tamaño del título. font-extrabold	Aplica un grosor de letra extra fuerte.
+                tracking-tight	Reduce ligeramente el espacio entre letras.-->
+                <h1 class="text-5xl font-extrabold tracking-tight">
+                    Rueda Nocturna
+                </h1>
+
+                <!--text-lg: aumenta el tamaño del texto - text-neutral-300: utiliza un gris claro - leading-relaxed: aumenta el espacio entre líneas para mejorar la lectura.-->
+                <p class="text-lg text-neutral-300 leading-relaxed">
+                    Descubre Medellín en bici cuando se encienden las luces
+                </p>
+
+                <!--flex: establece un contenedor flexível - gap-8: agrega un espacio de 8 unidades entre los elementos hijos.
+                flex no es una utilidad de espaciado, sino de distribución. La estamos utilizando para que los dos datos aparezcan uno al lado del otro.-->
+                <div class="flex flex-wrap gap-8">
+                    <!--text-2xl: aumenta el tamaño del texto - font-bold: aplica negrita - text-amber-400: utiliza un color ámbar para el texto-->
+                    <p class="text-2xl font-bold text-amber-400">3 rutas</p>
+
+                    <p class="text-2xl font-bold text-amber-400">Desde $55.000</p>
+
+                </div>
+                <!--inline-block	Permite aplicar dimensiones y espaciado al enlace manteniendo su comportamiento en línea.
+                bg-amber-400	Fondo ámbar - text-neutral-950	Texto oscuro - px-6	Espaciado horizontal - py-3	Espaciado vertical 
+                rounded-lg	Bordes redondeados - font-bold	Texto en negrita.-->
+                <a href="#" class="inline-block bg-amber-400 text-neutral-950 px-6 py-3 rounded-lg font-bold hover:bg-amber-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-400">
+                    Inscríbete</a>
+
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

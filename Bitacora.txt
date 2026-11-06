@@ -472,3 +472,18 @@ Tiempo: No se registró una medición exacta, pero la implementación con Bootst
 Conclusiones: Bootstrap permitió implementar rápidamente una distribución responsiva sin escribir CSS propio. Sin embargo, 
 ofrece menos libertad para definir el comportamiento exacto de la cuadrícula, pues utiliza puntos de quiebre preestablecidos. 
 Con CSS Grid propio se tiene mayor control sobre la adaptación automática de las columnas.
+
+MINIRETO 1 SEMANA 3 
+Comparación entre Bootstrap y Tailwind CSS
+
+Durante la semana 2 tuve un primer acercamiento a Bootstrap mediante un ejercicio corto. Esta experiencia me permitió observar cómo se pueden aplicar 
+estilos utilizando clases predefinidas del framework, aunque no desarrollé un proyecto suficientemente amplio como para evaluar su funcionamiento 
+en profundidad.
+
+En este minireto utilicé Tailwind CSS para construir la sección principal de Rueda Nocturna. 
+A diferencia de mi experiencia inicial con Bootstrap, aquí tuve que definir directamente en el HTML aspectos como los colores, 
+los tamaños, los espacios, la tipografía y la distribución de los elementos.
+
+Diferencia principal: Bootstrap trabaja con componentes y estilos predefinidos que permiten construir interfaces rápidamente. 
+Tailwind, en cambio, utiliza un enfoque utility-first, en el que cada clase representa una utilidad específica que se combina con otras para construir 
+el diseño.
