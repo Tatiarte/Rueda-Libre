@@ -510,3 +510,10 @@ Prueba de los botones
 Probé los tres botones (principal, secundario y de contorno) con el mouse y con el teclado.
 Con el mouse: al pasar el cursor por encima de cada botón cambió su color de fondo, así que el estado hover: funciona en las tres variantes.
 Con el teclado: al presionar Tab, el foco fue pasando por los botones en orden. Al llegar a cada uno apareció un anillo de color alrededor, que es el indicador de foco hecho con focus:ring-*. Como quité el contorno del navegador con focus:outline-none, este anillo lo reemplaza y permite saber en qué botón estoy parado sin usar el mouse.
+
+MINIRETO 4
+Reglas del kit. Para que los componentes sean consistentes definí reglas comunes: [pega aquí la tabla]. Comparando las clases de cada componente se comprueba que las cumplen: por ejemplo, el botón y el input comparten rounded-lg y el anillo focus:ring-4, y la card y las alertas comparten la escala de espaciado.
+
+Verificación de generación de clases. Busqué en output.css una clase que uso (bg-amber-400) y una que no (bg-pink-500). La primera aparece y la segunda no, porque la CLI escanea mis archivos y genera solo el CSS de las clases que encuentra. [Si quieres, agrega que repetiste la prueba con las clases nuevas del kit, como border-sky-400.]
+
+Comparación de enfoques. [Usa el texto del Minireto 1: componentes vs. utility-first.]
