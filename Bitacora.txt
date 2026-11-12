@@ -473,17 +473,40 @@ Conclusiones: Bootstrap permitió implementar rápidamente una distribución res
 ofrece menos libertad para definir el comportamiento exacto de la cuadrícula, pues utiliza puntos de quiebre preestablecidos. 
 Con CSS Grid propio se tiene mayor control sobre la adaptación automática de las columnas.
 
-MINIRETO 1 SEMANA 3 
-Comparación entre Bootstrap y Tailwind CSS
+MINIRETOS SEMANA 3 TAILWIND
+MINIRETO 1
+Creé la carpeta nocturna/ y dentro el archivo prototipo.html, con la estructura base de HTML y el script del Play CDN de Tailwind (<script src="https://cdn.tailwindcss.com"></script>). Con él prototipé la sección principal de la campaña “Rueda Nocturna”: la etiqueta “Nuevo · Jueves a sábado”, el título principal (el único h1 de la página), el subtítulo, los dos datos destacados (“3 rutas” y “Desde $55.000”) y el enlace “Inscríbete”.
 
-Durante la semana 2 tuve un primer acercamiento a Bootstrap mediante un ejercicio corto. Esta experiencia me permitió observar cómo se pueden aplicar 
-estilos utilizando clases predefinidas del framework, aunque no desarrollé un proyecto suficientemente amplio como para evaluar su funcionamiento 
-en profundidad.
+Cómo le di estilo
 
-En este minireto utilicé Tailwind CSS para construir la sección principal de Rueda Nocturna. 
-A diferencia de mi experiencia inicial con Bootstrap, aquí tuve que definir directamente en el HTML aspectos como los colores, 
-los tamaños, los espacios, la tipografía y la distribución de los elementos.
+Usé solo utilidades de Tailwind, sin <style>, sin style="" y sin clases de Bootstrap. Usé las cuatro familias que pedía el reto:
 
-Diferencia principal: Bootstrap trabaja con componentes y estilos predefinidos que permiten construir interfaces rápidamente. 
-Tailwind, en cambio, utiliza un enfoque utility-first, en el que cada clase representa una utilidad específica que se combina con otras para construir 
-el diseño.
+Espaciado: space-y-6, px-6, py-20, mx-auto, gap-10.
+Tamaños: max-w-3xl, max-w-xl, w-full.
+Colores: bg-slate-950, bg-amber-400, text-slate-300, text-amber-400.
+Tipografía: text-5xl, font-bold, leading-none, tracking-tight, uppercase.
+
+Cómo construí el botón “Inscríbete”
+
+Es un enlace (<a>) con apariencia de botón, armado combinando utilidades pequeñas: inline-block bg-amber-400 px-8 py-3 text-center font-bold text-slate-950. Cada clase hace una sola cosa: el fondo, el espaciado interno, el peso y el color del texto. Así controlo cada detalle del botón directamente en el HTML, sin escribir CSS aparte.
+
+Diferencia clave entre un framework de componentes y uno utility-first
+
+Un framework de componentes, como Bootstrap, entrega piezas ya diseñadas (por ejemplo .btn o .card): son rápidas de usar, pero el resultado se parece al de otros sitios y personalizarlas implica sobrescribir estilos. Uno utility-first, como Tailwind, entrega solo piezas pequeñas (colores, espacios, tipografía) y el diseño se arma combinándolas en el HTML. Se escribe más en el HTML, pero el resultado es propio y no depende de un diseño predefinido.
+
+
+MINIRETO 2
+Qué busqué en output.css
+
+Después de ejecutar la CLI de Tailwind con --watch, abrí src/output.css y busqué dos clases. Busqué bg-amber-400, que sí uso en los botones y en la etiqueta de la campaña, y apareció con su regla de CSS. Busqué bg-pink-500, que no uso en ninguna parte del proyecto, y no apareció.
+Por qué ocurre
+
+La CLI de Tailwind no copia todas sus clases al archivo final. Primero escanea mis archivos (como index.html), detecta qué clases escribí y genera solo el CSS de esas. Como bg-pink-500 no está escrita en ningún archivo del proyecto, Tailwind no la incluye. Esto mantiene output.css pequeño y sin estilos que nadie usa. Si agrego una clase nueva al HTML y guardo, el modo --watch regenera el archivo y la clase aparece sola.
+Diferencia con el Play CDN
+
+En el prototipo, el Play CDN descargaba y compilaba Tailwind en el navegador cada vez que se abría la página. Con la CLI el CSS se genera una sola vez, antes de publicar, y la página solo carga un archivo ya listo. Por eso output.css se sube a GitHub, porque GitHub Pages no ejecuta la CLI.
+Prueba de los botones
+
+Probé los tres botones (principal, secundario y de contorno) con el mouse y con el teclado.
+Con el mouse: al pasar el cursor por encima de cada botón cambió su color de fondo, así que el estado hover: funciona en las tres variantes.
+Con el teclado: al presionar Tab, el foco fue pasando por los botones en orden. Al llegar a cada uno apareció un anillo de color alrededor, que es el indicador de foco hecho con focus:ring-*. Como quité el contorno del navegador con focus:outline-none, este anillo lo reemplaza y permite saber en qué botón estoy parado sin usar el mouse.
