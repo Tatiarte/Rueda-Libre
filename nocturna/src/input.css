@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+/* Tema de marca de Rueda Libre / Rueda Nocturna.
+   Los colores y las fuentes son los mismos del sitio principal (CSS/styles.css)
+   más el color nuevo de la campaña: Amarillo Farol. */
+@theme {
+  /* Se eliminan los colores genéricos de Tailwind: solo existen los de la marca */
+  --color-*: initial;
+
+  --color-white: #ffffff;
+  --color-cream: #faf6ef;          /* Crema */
+  --color-night-blue: #14213d;     /* Azul Noche */
+  --color-asphalt-gray: #5b6470;   /* Gris Asfalto */
+  --color-route-green: #1e7a4f;    /* Verde Ruta */
+  --color-pedal-orange: #f39a2b;   /* Naranja Pedal */
+  --color-lantern-yellow: #ffd166; /* Amarillo Farol (campaña) */
+
+  /* Familias tipográficas: generan font-heading y font-body */
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+}
