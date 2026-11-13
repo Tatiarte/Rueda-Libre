@@ -399,6 +399,9 @@
   .bg-lantern-yellow {
     background-color: var(--color-lantern-yellow);
   }
+  .bg-night-blue {
+    background-color: var(--color-night-blue);
+  }
   .bg-night-blue\/10 {
     background-color: color-mix(in srgb, #14213d 10%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -452,6 +455,12 @@
   }
   .py-1 {
     padding-block: var(--spacing);
+  }
+  .py-1\.5 {
+    padding-block: calc(var(--spacing) * 1.5);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
@@ -582,6 +591,9 @@
     .hover\:border-pedal-orange:hover {
       border-color: var(--color-pedal-orange);
     }
+    .hover\:text-lantern-yellow:hover {
+      color: var(--color-lantern-yellow);
+    }
     .hover\:text-night-blue:hover {
       color: var(--color-night-blue);
     }
@@ -605,6 +617,9 @@
     --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
+  .focus\:ring-lantern-yellow:focus {
+    --tw-ring-color: var(--color-lantern-yellow);
+  }
   .focus\:ring-night-blue:focus {
     --tw-ring-color: var(--color-night-blue);
   }
@@ -613,6 +628,9 @@
     @supports (color: color-mix(in lab, red, red)) {
       --tw-ring-color: color-mix(in oklab, var(--color-night-blue) 30%, transparent);
     }
+  }
+  .focus\:ring-offset-night-blue:focus {
+    --tw-ring-offset-color: var(--color-night-blue);
   }
   .focus\:ring-offset-white:focus {
     --tw-ring-offset-color: var(--color-white);
@@ -663,14 +681,8 @@
     .md\:flex-row {
       flex-direction: row;
     }
-    .md\:items-center {
-      align-items: center;
-    }
     .md\:justify-between {
       justify-content: space-between;
-    }
-    .md\:gap-8 {
-      gap: calc(var(--spacing) * 8);
     }
   }
   @media (width >= 64rem) {
@@ -689,9 +701,6 @@
     .lg\:py-12 {
       padding-block: calc(var(--spacing) * 12);
     }
-    .lg\:py-16 {
-      padding-block: calc(var(--spacing) * 16);
-    }
     .lg\:py-20 {
       padding-block: calc(var(--spacing) * 20);
     }
@@ -708,6 +717,10 @@
     }
   }
   @media (prefers-color-scheme: dark) {
+    .dark\:border-b {
+      border-bottom-style: var(--tw-border-style);
+      border-bottom-width: 1px;
+    }
     .dark\:border-cream {
       border-color: var(--color-cream);
     }

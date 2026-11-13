@@ -19,10 +19,18 @@
 
 <body class="font-body bg-cream text-night-blue dark:bg-night-blue dark:text-white">
 
+  <!-- BARRA DEL SITIO: vuelve al sitio principal y lleva a reservas -->
+  <div class="bg-night-blue text-white dark:border-b dark:border-white/15">
+    <div class="flex items-center justify-between max-w-6xl mx-auto gap-4 px-6 py-2 text-sm">
+      <a href="../index.html" class="font-semibold rounded-lg hover:text-lantern-yellow focus:outline-none focus:ring-4 focus:ring-lantern-yellow">&larr; Volver al sitio</a>
+      <a href="../paginas/reservas.html" class="btn-primary px-4 py-1.5 text-sm focus:ring-lantern-yellow focus:ring-offset-night-blue">Reserva tu bici</a>
+    </div>
+  </div>
+
   <!-- ENCABEZADO -->
   <header class="border-b border-asphalt-gray/30 dark:border-white/15">
     <div class="flex max-w-6xl flex-col items-center gap-4 md:flex-row md:justify-between mx-auto px-6 py-4">
-      <a href="#inicio" class="font-heading text-xl font-bold rounded-lg text-night-blue dark:text-white focus:outline-none focus:ring-4 focus:ring-night-blue dark:focus:ring-lantern-yellow">Rueda Nocturna</a>
+      <a href="../index.html" aria-label="Rueda Nocturna, ir al inicio del sitio de Rueda Libre" class="font-heading text-xl font-bold rounded-lg text-night-blue dark:text-white focus:outline-none focus:ring-4 focus:ring-night-blue dark:focus:ring-lantern-yellow">Rueda Nocturna</a>
 
       <div class="flex items-center gap-4 lg:gap-8">
         <nav aria-label="Navegación principal" class="hidden md:block">
@@ -447,7 +455,7 @@
     <div class="flex max-w-6xl flex-col gap-8 md:flex-row md:justify-between mx-auto px-6 py-10 lg:py-12">
       <div class="space-y-2">
         <h3 class="font-heading font-bold text-night-blue dark:text-white">Rueda Nocturna</h3>
-        <p class="text-sm text-asphalt-gray dark:text-cream/70">Una campaña de Rueda Libre.</p>
+        <p class="text-sm text-asphalt-gray dark:text-cream/70">Una campaña de <a href="../index.html" class="font-semibold rounded-lg hover:text-night-blue focus:outline-none focus:ring-4 focus:ring-night-blue dark:hover:text-white dark:focus:ring-lantern-yellow">Rueda Libre</a>.</p>
         <p class="text-sm text-asphalt-gray dark:text-cream/70">Todos los derechos reservados © 2026</p>
       </div>
 
