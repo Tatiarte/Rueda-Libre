@@ -19,3 +19,33 @@
   --font-heading: "Montserrat", sans-serif;
   --font-body: "Open Sans", sans-serif;
 }
+
+/* Componentes: solo los botones, que son un único elemento repetido en toda la página
+   (8 veces en la landing). Máximo tres clases con @apply.
+   Orden de cada lista: layout, espaciado, tipografía, color y apariencia, estados.
+   El offset del anillo de foco asume fondo crema; sobre superficies blancas (cards y franja
+   de inscripción) se sobrescribe en el HTML con focus:ring-offset-white. */
+@layer components {
+  .btn-primary {
+    @apply px-8 py-3 text-center font-bold text-night-blue bg-pedal-orange rounded-lg shadow-lg
+      hover:bg-lantern-yellow
+      focus:outline-none focus:ring-4 focus:ring-night-blue focus:ring-offset-2 focus:ring-offset-cream
+      dark:focus:ring-lantern-yellow dark:focus:ring-offset-night-blue;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 text-center font-bold text-white bg-asphalt-gray rounded-lg shadow-lg
+      dark:bg-white/10
+      hover:bg-night-blue dark:hover:bg-white/20
+      focus:outline-none focus:ring-4 focus:ring-night-blue focus:ring-offset-2 focus:ring-offset-cream
+      dark:focus:ring-lantern-yellow dark:focus:ring-offset-night-blue;
+  }
+
+  .btn-outline {
+    @apply px-8 py-3 text-center font-bold text-night-blue border-2 border-night-blue rounded-lg
+      dark:border-lantern-yellow dark:text-lantern-yellow
+      hover:bg-night-blue hover:text-white dark:hover:bg-lantern-yellow dark:hover:text-night-blue
+      focus:outline-none focus:ring-4 focus:ring-night-blue focus:ring-offset-2 focus:ring-offset-cream
+      dark:focus:ring-lantern-yellow dark:focus:ring-offset-night-blue;
+  }
+}
