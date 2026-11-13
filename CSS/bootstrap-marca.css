@@ -1,0 +1,108 @@
+/* ==========================================================================
+   Tema de marca de Rueda Libre para Bootstrap
+   Se carga DESPUÉS de bootstrap.min.css y de styles.css.
+   Los códigos de color y las fuentes son los mismos del @theme de la landing
+   de Tailwind (nocturna/src/input.css). Si cambia uno, hay que cambiar el otro.
+   ========================================================================== */
+
+:root {
+  /* Marca (mismos nombres y valores que en @theme) */
+  --color-cream: #FAF6EF;          /* Crema */
+  --color-night-blue: #14213D;     /* Azul Noche */
+  --color-asphalt-gray: #5B6470;   /* Gris Asfalto */
+  --color-route-green: #1E7A4F;    /* Verde Ruta */
+  --color-pedal-orange: #F39A2B;   /* Naranja Pedal */
+  --color-lantern-yellow: #FFD166; /* Amarillo Farol (campaña) */
+
+  /* Variables de Bootstrap con los mismos valores */
+  --bs-body-bg: #FAF6EF;
+  --bs-body-bg-rgb: 250, 246, 239;
+  --bs-body-color: #14213D;
+  --bs-body-color-rgb: 20, 33, 61;
+  --bs-secondary-color: #5B6470;
+  --bs-secondary-color-rgb: 91, 100, 112;
+  --bs-primary: #F39A2B;
+  --bs-primary-rgb: 243, 154, 43;
+  --bs-success: #1E7A4F;
+  --bs-success-rgb: 30, 122, 79;
+  --bs-warning: #FFD166;
+  --bs-warning-rgb: 255, 209, 102;
+  --bs-dark: #14213D;
+  --bs-dark-rgb: 20, 33, 61;
+  --bs-light: #FAF6EF;
+  --bs-light-rgb: 250, 246, 239;
+  --bs-link-color: #1E7A4F;
+  --bs-link-color-rgb: 30, 122, 79;
+  --bs-body-font-family: 'Open Sans', sans-serif;
+}
+
+/* ----- Encabezado y navbar ----- */
+header {
+  padding: 0; /* la navbar ya trae su propio relleno */
+}
+
+.navbar {
+  --bs-navbar-color: #FFFFFF;
+  --bs-navbar-hover-color: #F39A2B;
+  --bs-navbar-active-color: #F39A2B;
+  --bs-navbar-brand-color: #FFFFFF;
+  --bs-navbar-brand-hover-color: #F39A2B;
+}
+
+.navbar .container {
+  max-width: 75rem;
+}
+
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.navbar .nav-link.active {
+  font-weight: 600;
+}
+
+/* ----- Botón principal de la marca ----- */
+.btn-primary {
+  --bs-btn-color: #14213D;
+  --bs-btn-bg: #F39A2B;
+  --bs-btn-border-color: #F39A2B;
+  --bs-btn-hover-color: #14213D;
+  --bs-btn-hover-bg: #FFD166;
+  --bs-btn-hover-border-color: #FFD166;
+  --bs-btn-active-color: #14213D;
+  --bs-btn-active-bg: #FFD166;
+  --bs-btn-active-border-color: #FFD166;
+  --bs-btn-focus-shadow-rgb: 255, 209, 102;
+  font-weight: 600;
+}
+
+/* ----- Carrusel ----- */
+.carousel-item img {
+  height: 22rem;
+  object-fit: cover; /* alto uniforme sin deformar las fotos */
+}
+
+.carousel-caption {
+  left: 10%;
+  right: 10%;
+  padding: 0.75rem 1rem;
+  background-color: rgba(20, 33, 61, 0.8); /* Azul Noche al 80 %: texto blanco legible sobre cualquier foto */
+  border-radius: 8px;
+}
+
+.carousel-caption h3 {
+  margin-bottom: 0.25rem;
+  color: #FFFFFF;
+}
+
+.carousel-caption p {
+  margin-bottom: 0;
+}
+
+/* Cuarta diapositiva: Rueda Nocturna (sin foto, fondo Azul Noche) */
+.carrusel-nocturna-contenido {
+  height: 22rem;
+  padding: 2rem 4rem;
+  background-color: #14213D;
+}

@@ -14,25 +14,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
     rel="stylesheet">
   <!-- Hoja de estilos externa: para que la hoja de estilo utilice las fuentes, estas se cargan primero que el css -->
+  <!-- Bootstrap va antes de styles.css para que los estilos propios del sitio tengan prioridad -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="CSS/styles.css">
+  <!-- Variables --bs-* con los colores y las fuentes de la marca -->
+  <link rel="stylesheet" href="CSS/bootstrap-marca.css">
 
 </head>
 
 <body>
   <!--Encabezado: nombre del negocio + navegación principal-->
   <header>
-    <div class="contenedor">
-      <p><strong>Rueda Libre</strong></p>
-      <nav aria-label="Navegación principal">
-        <!--asigno un ID al menú para poder estilizarlo  -->
-        <ul id="menu">
-          <!--el enlace Inicio debe llevar a la clase activo:-->
-          <li><a href="index.html" class="activo">Inicio</a></li>
-          <li><a href="paginas/tarifas.html">Tarifas</a></li>
-          <li><a href="paginas/reservas.html">Reservas</a></li>
-        </ul>
-      </nav>
-    </div>
+    <!-- Navbar de Bootstrap: aria-label sirve para nombrar la navegación a los lectores de pantalla -->
+    <nav class="navbar navbar-expand-md" data-bs-theme="dark" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Rueda Libre</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal"
+          aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir o cerrar el menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu-principal">
+          <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="paginas/tarifas.html">Tarifas</a></li>
+          <li class="nav-item"><a class="nav-link" href="paginas/reservas.html">Reservas</a></li>
+          <li class="nav-item"><a class="nav-link" href="nocturna/index.html">Rueda Nocturna <span class="badge text-bg-warning">Nuevo</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <!--Contenido principal: solo hay un <main> por página-->
@@ -55,6 +65,63 @@
 
       <img src="img/Portada_Rueda_Libre.jpg" alt="Portada de Rueda Libre, alquiler de bicicletas en Medellín">
 
+    </section>
+
+    <!-- Carrusel de Bootstrap: 3 rutas del sitio + cuarta diapositiva que lleva a la landing.
+         Sin data-bs-ride no se reproduce solo (mejor para accesibilidad). -->
+    <section aria-label="Destacados de Rueda Libre">
+      <div id="carrusel-destacados" class="carousel slide my-4" aria-roledescription="carrusel" aria-label="Destacados de Rueda Libre">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carrusel-destacados" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositiva 1: Cerro El Volador"></button>
+          <button type="button" data-bs-target="#carrusel-destacados" data-bs-slide-to="1" aria-label="Diapositiva 2: Ciclovía"></button>
+          <button type="button" data-bs-target="#carrusel-destacados" data-bs-slide-to="2" aria-label="Diapositiva 3: Medellín - Caldas"></button>
+          <button type="button" data-bs-target="#carrusel-destacados" data-bs-slide-to="3" aria-label="Diapositiva 4: Rueda Nocturna"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/volador.jpeg" class="d-block w-100" alt="Ruta en bicicleta por el Cerro El Volador">
+            <div class="carousel-caption">
+              <h3>Cerro El Volador</h3>
+              <p>Nivel: Bajo</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="img/ciclovia.jpeg" class="d-block w-100" alt="Ciclovía por la Regional">
+            <div class="carousel-caption">
+              <h3>Ciclovía</h3>
+              <p>Nivel: Intermedio</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="img/caldas.jpeg" class="d-block w-100" alt="Ruta en bicicleta hacia Caldas">
+            <div class="carousel-caption">
+              <h3>Medellín - Caldas</h3>
+              <p>Nivel: Avanzado</p>
+            </div>
+          </div>
+
+          <!-- Cuarta diapositiva: lleva a la landing de Tailwind -->
+          <div class="carousel-item">
+            <div class="carrusel-nocturna-contenido d-flex flex-column justify-content-center align-items-center text-center text-white">
+              <h3 class="text-warning">Rueda Nocturna</h3>
+              <p>Descubre Medellín en bici cuando se encienden las luces. Recorridos guiados de jueves a sábado a las 7:30 p. m.</p>
+              <a href="nocturna/index.html" class="btn btn-primary">Conoce Rueda Nocturna</a>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrusel-destacados" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carrusel-destacados" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
     </section>
 
     <section class="rutas">
@@ -281,6 +348,8 @@
   </a>
 
 
+  <!-- JavaScript de Bootstrap: navbar plegable y carrusel -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

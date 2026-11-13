@@ -14,22 +14,33 @@
   <!-- Tipografías -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
     rel="stylesheet">
+  <!-- Bootstrap va antes de styles.css para que los estilos propios del sitio tengan prioridad -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../CSS/styles.css">
+  <!-- Variables --bs-* con los colores y las fuentes de la marca -->
+  <link rel="stylesheet" href="../CSS/bootstrap-marca.css">
 </head>
 
 <body>
   <header>
-    <div class="contenedor">
-      <p><strong>Rueda Libre</strong></p>
-      <!--aria-label sirve para darle un nombre descriptivo a un elemento HTML para las tecnologías de asistencia así no se confunde con otro nav por ejemplo-->
-      <nav aria-label="Navegación principal">
-        <ul id="menu">
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a href="tarifas.html">Tarifas</a></li>
-          <li><a href="reservas.html" class="activo">Reservas</a></li>
-        </ul>
-      </nav>
-    </div>
+    <!-- Navbar de Bootstrap: aria-label sirve para nombrar la navegación a los lectores de pantalla -->
+    <nav class="navbar navbar-expand-md" data-bs-theme="dark" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">Rueda Libre</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal"
+          aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir o cerrar el menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu-principal">
+          <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="tarifas.html">Tarifas</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="reservas.html">Reservas</a></li>
+          <li class="nav-item"><a class="nav-link" href="../nocturna/index.html">Rueda Nocturna <span class="badge text-bg-warning">Nuevo</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <main>
@@ -155,7 +166,7 @@
           <dt>Martes a viernes</dt>
           <dd>7:00 a. m. a 8:00 p. m.</dd>
           <dt>Sábados, domingos y festivos</dt>
-          <dd>6:00 a. m. a 2:00 p. m.</dd>
+          <dd>6:00 a. m. a 8:00 p. m.</dd>
           <dt>Lunes: Cerrado</dt>
         </dl>
       </aside>
@@ -193,6 +204,8 @@
     WhatsApp
   </a>
 
+  <!-- JavaScript de Bootstrap: navbar plegable y carrusel -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

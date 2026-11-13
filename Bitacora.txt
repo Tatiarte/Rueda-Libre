@@ -49,6 +49,85 @@ Minireto 5del día 2 Estructura con significado:
 Antes de tocar el código, dibuja en la bitácora (con texto o en papel) el esquema de regiones de cada página: 
 encabezado, navegación, contenido principal, secciones, artículos, contenido complementario y pie.
 
+# Bitácora · Rueda Libre · Regiones semánticas
+
+## 1. Esquemas de regiones (antes de tocar el código)
+
+### index.html
+```
+body
+├── header
+│   ├── p > strong "Rueda Libre"
+│   └── nav (principal)
+│       └── ul: Inicio · Tarifas y rutas · Reservas
+├── main
+│   ├── h1 + img portada + p introductorio (enlace a #encuentranos)
+│   ├── section ¿Quiénes somos?            (h2)
+│   ├── section Nuestros servicios         (h2)
+│   │   ├── article Alquiler de bicicletas (h3)
+│   │   ├── article Recorridos guiados     (h3)
+│   │   └── article Taller básico          (h3)
+│   ├── section ¿Cómo alquilar?            (h2)
+│   │   └── section Beneficios             (h3)
+│   └── section#encuentranos Encuéntranos  (h2)
+└── footer
+```
+
+### tarifas.html
+```
+body
+├── header (logo + nombre + nav principal)
+├── main
+│   ├── h1 + p introductorio
+│   ├── section Tarifas de alquiler de bicicletas   (h2 + table)
+│   ├── section#recorridos-guiados Tarifas de recorridos guiados (h2 + table)
+│   └── section Información importante              (h2)
+│       └── aside ¿Qué debes llevar?                (h3 + ul)  ← complementario
+└── footer
+```
+
+### reservas.html
+```
+body
+├── header (nombre + nav principal)
+├── main
+│   ├── h1 + p introductorio
+│   ├── section Formulario de reserva (h2 + form con fieldsets)
+│   └── aside Horario de atención     (h2 + dl)  ← complementario
+└── footer
+```
+
+## 2. Cambios realizados
+
+- **index.html**: era el único sin regiones. Se añadió `header` (nombre + `nav` con `aria-label="Navegación principal"`), `main`, `footer` (ya existía el bloque final, ahora está fuera de `main`). Cada bloque temático pasó a `section`, cada servicio a `article`, y *Beneficios* quedó como `section` anidada dentro de *¿Cómo alquilar?* porque es un h3.
+- **tarifas.html y reservas.html**: ya cumplían con todos los requisitos (header, nav principal, un `main`, tablas/formulario en `section`, `aside` para lo complementario, `footer`). No se modificaron, y se conservaron intactos tus comentarios.
+
+## 3. Decisiones que conviene recordar
+
+- **div y span**: no había ninguno en las tres páginas y no se añadió ninguno, así que no hay excepciones que justificar.
+- **Nombre del negocio en el header de index**: se agregó `<p><strong>Rueda Libre</strong></p>` para que sea igual que en las otras dos páginas. El h1 se quedó en `main` porque es el título del contenido propio de la página.
+- **Intro de index**: h1, imagen y párrafo van directos en `main` sin `section`, porque el h1 ya es su encabezado.
+- **`aside` dentro de `main`**: en tarifas y reservas es contenido complementario del contenido de la página, por eso va dentro de `main` y no en el `footer`.
+
+## 4. Verificación
+
+| Comprobación | index | tarifas | reservas |
+|---|---|---|---|
+| Un solo `main` | Sí | Sí | Sí |
+| Jerarquía de encabezados sin cambios | Sí (h1, h2, h2, h3×3, h2, h3, h2) | Sí | Sí |
+| Enlaces idénticos a los originales | Sí | sin cambios | sin cambios |
+| Ancla `#encuentranos` existe | Sí (`section#encuentranos`) | n/a | n/a |
+| Etiquetas balanceadas | Sí | Sí | Sí |
+| `div`/`span` | 0 | 0 | 0 |
+
+Pendiente por revisar en tu equipo: las rutas relativas (`paginas/…`, `../index.html`, `img/…`) asumen la estructura `index.html` en la raíz con carpetas `paginas/` e `img/`. Los archivos subidos están en una sola carpeta y las imágenes no se subieron, así que eso no se pudo probar abriendo los enlaces.
+
+## 5. Observaciones fuera del alcance (no modificadas)
+
+- reservas.html: el checkbox de datos personales tiene `id="Tratamiento de datos personales"`, que contiene espacios y no es un id válido; el `label for` no se asocia con el checkbox. Además dice "politícas" y "Acepta" (en el otro checkbox es "Acepto").
+- reservas.html: el fieldset "Plan" está bien cerrado pero mal indentado, y `cantidad` y `recorrido` quedan dentro de "Plan".
+- tarifas.html: tu comentario dice que el `aside` es como un pie de página; en realidad es contenido complementario (el pie de página es `footer`).
+
 Esquema de regiones utilizado antes de intervenir el código
 **index.html**
 body
@@ -512,8 +591,167 @@ Con el mouse: al pasar el cursor por encima de cada botón cambió su color de f
 Con el teclado: al presionar Tab, el foco fue pasando por los botones en orden. Al llegar a cada uno apareció un anillo de color alrededor, que es el indicador de foco hecho con focus:ring-*. Como quité el contorno del navegador con focus:outline-none, este anillo lo reemplaza y permite saber en qué botón estoy parado sin usar el mouse.
 
 MINIRETO 4
-Reglas del kit. Para que los componentes sean consistentes definí reglas comunes: [pega aquí la tabla]. Comparando las clases de cada componente se comprueba que las cumplen: por ejemplo, el botón y el input comparten rounded-lg y el anillo focus:ring-4, y la card y las alertas comparten la escala de espaciado.
+Reglas del kit. Para que los componentes sean consistentes definí reglas comunes: Comparando las clases de cada componente se comprueba que las cumplen: por ejemplo, el botón y el input comparten rounded-lg y el anillo focus:ring-4, y la card y las alertas comparten la escala de espaciado.
+Verificación de generación de clases. Busqué en output.css una clase que uso (bg-amber-400) y una que no (bg-pink-500). La primera aparece y la segunda no, porque la CLI escanea mis archivos y genera solo el CSS de las clases que encuentra. Comparación de enfoques.
+ 
+ MINIRETO 5
 
-Verificación de generación de clases. Busqué en output.css una clase que uso (bg-amber-400) y una que no (bg-pink-500). La primera aparece y la segunda no, porque la CLI escanea mis archivos y genera solo el CSS de las clases que encuentra. [Si quieres, agrega que repetiste la prueba con las clases nuevas del kit, como border-sky-400.]
+ Decisión: grid o flex en los pasos de cómo funciona. Para los cuatro pasos usé grid (grid grid-cols-4 gap-8). Son exactamente cuatro elementos y deben tener el mismo ancho y alinearse en columnas. Con grid-cols-4, cada paso ocupa un cuarto del ancho sin importar cuánto texto tenga, y el espacio entre ellos lo define gap-8. Flex habría sido mejor si los elementos tuvieran anchos distintos o si el número de pasos pudiera cambiar. Como aquí la estructura es fija, grid es más directo. Por la misma razón usé grid en las tres cards de rutas (grid grid-cols-3 gap-8). 
 
-Comparación de enfoques. [Usa el texto del Minireto 1: componentes vs. utility-first.]
+Dónde usé flex: Usé flex en el encabezado (flex items-center justify-between), con el logo a un lado y los enlaces y el botón al otro, centrados verticalmente. También lo usé en el pie de página (flex justify-between) para repartir sus tres bloques, y en la franja de inscripción. Flex funciona bien en estos casos porque son filas de elementos de tamaño distinto que solo hay que distribuir en una dirección.
+
+Contenedor común: Todas las secciones, el encabezado y el pie usan el mismo contenedor: mx-auto max-w-6xl px-6. Así el contenido queda centrado, con el mismo ancho máximo y el mismo relleno lateral en toda la página.
+
+Anclas y semántica: Estructuré la página con <header>, <main> (con una <section> por bloque, cada una con su id) y <footer>. Los enlaces del encabezado apuntan a esas secciones con #rutas, #como-funciona e #inscripcion.
+
+Componentes del kit: Copié los botones y las cards desde componentes.html sin crear variantes nuevas, para mantener la consistencia con las reglas del kit.
+
+
+MINIRETO 6
+ Landing responsive
+
+1. Revisión a 360 px (antes de adaptar)
+
+Al abrir la landing de escritorio en el modo dispositivo de Chrome a 360 px, encontré estos problemas:
+
+Aparece scroll horizontal en toda la página.
+El encabezado no cabe: el logo, los tres enlaces y el botón “Inscríbete” se salen o quedan apretados.
+Los datos destacados (“3 rutas” y “Desde $55.000”) se salen de la pantalla.
+Las rutas están en tres columnas y los pasos en cuatro, así que cada card queda muy angosta y el contenido es ilegible.
+El pie de página tiene tres bloques apretados en una sola fila.
+La franja de inscripción queda comprimida.
+
+2. Qué cambié (enfoque mobile-first)
+
+Reescribí las clases con el enfoque mobile-first: las clases sin prefijo definen el celular, y los prefijos sm:, md: y lg: ajustan las pantallas más grandes.
+
+Encabezado: apilado en el celular (flex-col) y en fila desde md:. Los enlaces a las secciones se ocultan en el celular (hidden md:block) y queda visible el botón “Inscríbete”.
+Rutas: grid-cols-1 sm:grid-cols-2 lg:grid-cols-3.
+Pasos: grid-cols-1 sm:grid-cols-2 lg:grid-cols-4.
+Datos destacados, franja de inscripción y pie: apilados en el celular y en fila desde sm: o md:.
+Tipografía y espaciado: el título principal pasa de text-4xl a sm:text-5xl y lg:text-7xl, y las secciones tienen más relleno vertical en escritorio (py-12 y lg:py-20).
+
+| Ancho | Encabezado | Rutas | Pasos | Pie y franja | Scroll horizontal |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **360 px** | Apilado: logo arriba y botón “Inscríbete” debajo; enlaces ocultos | 1 columna | 1 columna | Bloques del pie y franja de inscripción apilados | No |
+| **768 px** | En fila: logo, enlaces y botón (`md:`) | 2 columnas (`sm:`) | 2 columnas (`sm:`) | Pie y franja en fila (`md:`) | No |
+| **1024 px** | En fila, con más espacio entre elementos (`lg:`) | 3 columnas (`lg:`) | 4 columnas (`lg:`) | En fila | No |
+| **1280 px** | En fila; contenido centrado con ancho máximo `max-w-6xl` | 3 columnas | 4 columnas | En fila | No |
+
+MINIRETO 7
+Minireto 7: Marca nocturna, tema propio y modo oscuro. En este minireto hice lo siguiente: (1) en src/input.css definí con @theme los seis colores de la marca: Crema (
+#FAF6EF), Azul Noche (#14213D), Gris Asfalto (#5B6470), Verde Ruta (#1E7A4F), Naranja Pedal (#F39A2B) y el nuevo Amarillo Farol (#FFD166), más el blanco, usando los mismos nombres de styles.css; (2) agregué --color-*: initial; para eliminar la paleta genérica de Tailwind, de modo que cualquier clase
+de color que no sea de la marca ya no se genera; (3) definí las familias --font-heading (Montserrat) y --font-body (Open Sans), que generan las utilidades font-heading y
+font-body, y cargué las fuentes desde Google Fonts en el <head> de ambas páginas; (4) reemplacé todos los colores genéricos de index.html y componentes.html por los de la marca,
+y comprobé con una búsqueda que no quedan clases como slate, amber o emerald; (5) convertí el modo claro en la base (fondo Crema, texto Azul Noche, cards blancas) y agregué
+la variante dark: en fondos, textos, cards, bordes y campos, usando la estrategia por defecto, que sigue la preferencia del sistema; (6) validé el contraste WCAG de las
+combinaciones que uso y encontré tres que no cumplían 4.5:1 en modo oscuro: Verde Ruta sobre Azul Noche (3.01:1), Verde Ruta sobre las cards oscuras (2.61:1) y Gris Asfalto
+sobre Azul Noche (2.66:1); (7) corregí esas combinaciones dejando de usar Verde Ruta y Gris Asfalto como color de texto en modo oscuro, y usando en su lugar Amarillo Farol 
+para precios y datos destacados (11.08:1) y Crema con transparencia para los textos secundarios (entre 7.1:1 y 9.9:1); además, Verde Ruta se conservó solo como fondo de la 
+etiqueta “Fácil” con texto blanco (5.31:1); (8) mantuve la consistencia del kit, con los mismos radios (rounded-lg, rounded-xl), el mismo espaciado y los mismos colores en la 
+landing y en componentes.html; y (9) probé el modo oscuro emulando prefers-color-scheme: dark en DevTools (panel Rendering) y revisé que todas las secciones cambiaran de forma 
+coherente, y comprobé que el modo claro sigue funcionando igual. Para terminar, hice commit y push incluyendo src/output.css.
+
+MINIRETO 8
+Minireto 8: código legible y veredicto Bootstrap vs Tailwind
+1. Clases repetidas en la landing
+
+La landing tiene 113 elementos con class, 49 listas distintas y 661 clases escritas.
+
+Lista de clases	Veces	Clases	Decisión
+Botones (principal, secundario, contorno)	8	13 a 17	@apply: .btn-primary (6 usos), .btn-secondary (1), .btn-outline (1)
+Texto pequeño text-sm text-asphalt-gray dark:text-cream/70	14	3	Se queda en el HTML
+Dato font-semibold text-night-blue dark:text-white	9	3	Se queda en el HTML
+Card de ruta	3	11	Marcado del kit reutilizado
+Paso de “¿Cómo funciona?”	4	8	Marcado reutilizado
+
+Criterio: solo usé @apply en los botones, porque son un único elemento que se repite y tiene una lista larga. Esconder 3 clases detrás de un nombre no mejora la lectura. Las cards y los pasos son piezas grandes, así que mantengo el marcado del kit.
+
+Resultado: pasé de 661 a 542 clases (−18 %) y de 16.834 a 14.835 bytes de HTML (−12 %).
+
+Detalle técnico: en Tailwind v4 las utilidades pesan más que @layer components. Por eso los botones sobre fondo blanco sobrescriben el offset del foco con focus:ring-offset-white dark:focus:ring-offset-night-blue.
+
+2. Orden de las clases
+
+Componente, layout, espaciado, tipografía, color y apariencia, estados. Dentro de cada grupo van primero la base, luego sm, md y lg, y al final dark:. Un script verificó que las 113 etiquetas conservan las mismas clases que antes.
+
+3. Tamaños
+Recurso	Sin comprimir
+output.css de Tailwind, sin minificar	25.431 B
+output.css de Tailwind, minificado	≈ 20.194 B (estimado) 
+bootstrap.min.css 5.3.3 (CDN)	232.803 B (medido en el archivo descargado)
+
+Bootstrap pesa unas 11,5 veces más que el CSS minificado de Tailwind. No medí el JavaScript de Bootstrap ni los tamaños transferidos, porque DevTools no mostró el CSS en Brave.
+
+4. Contraste en modo oscuro (WCAG 2.1, mínimo 4,5)
+Elemento	Ratio
+Texto principal (blanco / azul noche)	15,97
+Texto secundario (cream/80)	9,87
+Texto pequeño (cream/70)	7,88
+Texto pequeño en card	7,10
+Cifras y precios (amarillo farol)	11,08
+Botón principal (azul noche / naranja)	7,20
+Botón secundario (blanco / white/10)	11,87
+Botón contorno (amarillo farol)	11,08
+Etiqueta Fácil (blanco / verde ruta)	5,31
+
+Todos los pares pasan AA. El más bajo es blanco sobre verde ruta (5,31).
+
+5. Pruebas responsive
+Ancho	Modo	Rutas	Pasos	Desborde horizontal
+375 px	claro / oscuro	1	1	no ocurre se acomoda en las filas requeridas
+768 px	claro / oscuro	2	2	no ocurre se acomoda en las filas requeridas
+1280 px	claro / oscuro	3	4	no ocurre se acomoda en las filas requeridas
+6. Bootstrap vs Tailwind
+Criterio	Bootstrap	Tailwind
+Curva de aprendizaje	Rápida: copias componentes y funcionan. El costo llega al personalizar.	Más lenta: hay que aprender las utilidades y el HTML se llena de clases. Luego no hay que saltar entre HTML y CSS.
+Personalización	Se sobrescribe el tema y hay que pelear con la especificidad.	La paleta de marca vive en @theme y el modo oscuro se escribe con dark:.
+Tamaño final	232.803 B de CSS, más JavaScript sin medir.	≈ 20 KB de CSS minificado y ningún JavaScript.
+Casos de uso	Paneles, prototipos rápidos y sitios con componentes que usan JS.	Sitios con identidad propia y landings.
+
+MINIRETO 9 Contrarreloj 1: inscripción (40 min)
+
+Tiempo real: 57 min. 
+Controles elegidos: texto, correo, teléfono, número, select para la ruta, radios para los conjuntos cortos (día, nivel y bicicleta) y casilla para las condiciones. Los radios muestran todas las opciones a la vista.
+Reglas: todo required; nombre minlength="3"; celular pattern="3[0-9]{9}" con title; acompañantes min="0" max="3".
+Pruebas:
+Caso	Resultado esperado	Resultado real
+Vacío	No envía, señala el primer campo	se cumple
+Inválido	No envía, muestra el title del celular	se cumploe
+Completo	Muestra “Inscripción exitosa”	se cumple
+Solo teclado	Se completa y se envía	se cumple
+
+Contrarreloj 3: planes (45 min)
+
+Tiempo real: 1hora y 14 min. 
+Box model: las tres cards tienen p-6 y border-2; el destacado se logra con ring-2, que no ocupa espacio.
+DevTools (Computed): ancho [COMPLETAR] px en las tres, padding 24 px.
+Contraste: todos los pares ≥ 4,5 (mínimo 4,60 en claro y 7,07 en oscuro).
+
+Minireto 10: Contrarreloj 2. 
+Tiempo real: 48 min de los 40 disponibles. Esto fue lo que hice: (1) comprobé que el sitio v2.0 no usaba Bootstrap, 
+así que agregué Bootstrap 5.3.9 por CDN en las tres páginas, cargado antes de styles.css para que los estilos propios del sitio tengan prioridad; (2) 
+reemplacé el encabezado de las tres páginas por una navbar de Bootstrap con los enlaces Inicio, Tarifas, Reservas y Rueda Nocturna; (3) agregué en index.html 
+un carrusel con tres rutas del sitio y una cuarta diapositiva que lleva a la landing, sin reproducción automática por accesibilidad; (4) en la landing de Tailwind hice que 
+el logo lleve a ../index.html y agregué una barra superior con “← Volver al sitio” y el botón “Reserva tu bici” hacia ../paginas/reservas.html, y convertí “Rueda Libre” del 
+pie en un enlace al sitio; (5) usé rutas relativas entre la raíz del repositorio y la carpeta nocturna/ (nocturna/index.html desde la raíz, ../nocturna/index.html desde 
+paginas/, y ../index.html y ../paginas/reservas.html desde la landing); (6) creé CSS/bootstrap-marca.css con las variables --bs-* y los mismos seis códigos de color del 
+@theme de Tailwind (Crema 
+#FAF6EF, Azul Noche 
+#14213D, Gris Asfalto 
+#5B6470, Verde Ruta 
+#1E7A4F, Naranja Pedal 
+#F39A2B y Amarillo Farol 
+#FFD166), y las mismas fuentes (Montserrat y Open Sans) en ambos productos; (7) comprobé que el correo del pie es el mismo en el sitio y en la landing 
+(hola@ruedalibre.example); y (8) verifiqué los enlaces en local y en GitHub Pages: [resultado, por ejemplo: “todos los enlaces funcionan y no hay errores 404 en la 
+pestaña Network”; o, si encontraste problemas, cuáles fueron y cómo los corregiste]. Para terminar, hice commit y push.
+
+Hallazgo: encontre una inconsistencia en los horarios de Rueda Libre inicio, Tarifas y Reservas, fue homogeneizado.
+
+Minireto 11: Contrarreloj 3. Tiempo real: 78 min de los 45 disponibles. Construí la sección “Planes Rueda Nocturna” con: 
+(1) una cuadrícula grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8, una columna en celular y tres desde lg:, con cards de la misma altura; (2) 
+cada card en columna con flex flex-col justify-between gap-8 para que el botón quede siempre al final; (3) la lista de beneficios con flex flex-col gap-3 y cada 
+ítem con flex items-start gap-3; (4) el plan Pareja destacado con border-4 border-pedal-orange, fondo bg-pedal-orange/10, botón principal y la etiqueta “Más elegido” 
+en posición absoluta, sin mover las otras cards; (5) un box model coherente con el kit: p-6, rounded-xl y border en las dos cards normales; (6) modo oscuro con dark: y 
+contraste revisado, todo el texto por encima de 4.5:1; y (7) medidas en DevTools: [anota lo que viste, por ejemplo “las tres cards miden __ px de ancho y tienen 24 px de 
+relleno”]. Pendiente: [lo que haya quedado sin hacer, o “nada”].
