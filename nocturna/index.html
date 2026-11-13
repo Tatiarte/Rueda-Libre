@@ -15,12 +15,12 @@
 
   <!-- ENCABEZADO: logo a un lado; enlaces y botón al otro -->
   <header class="border-b border-slate-700">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <div class="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-4 md:flex-row md:justify-between">
       <a href="#inicio" class="rounded-lg text-xl font-bold text-white focus:outline-none focus:ring-4 focus:ring-amber-400/30">Rueda Nocturna</a>
 
-      <div class="flex items-center gap-8">
-        <nav aria-label="Navegación principal">
-          <ul class="flex items-center gap-6">
+      <div class="flex items-center gap-4 lg:gap-8">
+        <nav aria-label="Navegación principal" class="hidden md:block">
+          <ul class="flex items-center gap-4 lg:gap-6">
             <li><a href="#rutas" class="rounded-lg px-2 py-1 text-slate-300 hover:text-white focus:outline-none focus:ring-4 focus:ring-amber-400/30">Rutas</a></li>
             <li><a href="#como-funciona" class="rounded-lg px-2 py-1 text-slate-300 hover:text-white focus:outline-none focus:ring-4 focus:ring-amber-400/30">¿Cómo funciona?</a></li>
             <li><a href="#inscripcion" class="rounded-lg px-2 py-1 text-slate-300 hover:text-white focus:outline-none focus:ring-4 focus:ring-amber-400/30">Inscripción</a></li>
@@ -40,13 +40,13 @@
 
     <!-- SECCIÓN PRINCIPAL -->
     <section id="inicio">
-      <div class="mx-auto max-w-6xl px-6 py-24">
+      <div class="mx-auto max-w-6xl px-6 py-12 lg:py-24">
         <div class="max-w-3xl space-y-6">
           <p class="inline-block bg-amber-400 px-3 py-1 text-sm font-semibold tracking-wide text-slate-950">
             Nuevo · Jueves a sábado
           </p>
 
-          <h1 class="text-5xl font-bold leading-none tracking-tight text-white sm:text-7xl">
+          <h1 class="text-4xl font-bold leading-none tracking-tight text-white sm:text-5xl lg:text-7xl">
             Rueda Nocturna
           </h1>
 
@@ -54,14 +54,14 @@
             Descubre Medellín en bici cuando se encienden las luces
           </p>
 
-          <dl class="flex gap-10 py-4">
+          <dl class="flex flex-col gap-4 py-4 sm:flex-row sm:gap-10">
             <div class="space-y-1">
               <dt class="text-sm font-semibold uppercase tracking-widest text-slate-400">Recorridos</dt>
-              <dd class="text-3xl font-bold text-amber-400">3 rutas</dd>
+              <dd class="text-2xl font-bold text-amber-400 sm:text-3xl">3 rutas</dd>
             </div>
             <div class="space-y-1">
               <dt class="text-sm font-semibold uppercase tracking-widest text-slate-400">Precio</dt>
-              <dd class="text-3xl font-bold text-amber-400">Desde $55.000</dd>
+              <dd class="text-2xl font-bold text-amber-400 sm:text-3xl">Desde $55.000</dd>
             </div>
           </dl>
 
@@ -85,10 +85,10 @@
 
     <!-- RUTAS: cuadrícula de tres columnas -->
     <section id="rutas">
-      <div class="mx-auto max-w-6xl space-y-8 px-6 py-16">
-        <h2 class="text-3xl font-bold tracking-tight text-white">Rutas</h2>
+      <div class="mx-auto max-w-6xl space-y-8 px-6 py-12 lg:py-20">
+        <h2 class="text-2xl font-bold tracking-tight text-white lg:text-3xl">Rutas</h2>
 
-        <div class="grid grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
 
           <!-- Card 1: Fácil -->
           <article class="overflow-hidden rounded-xl border border-slate-700 bg-slate-900 shadow-lg hover:border-amber-400 hover:shadow-2xl hover:shadow-amber-400/20">
@@ -183,10 +183,10 @@
 
     <!-- ¿CÓMO FUNCIONA?: cuatro pasos en grid de cuatro columnas iguales -->
     <section id="como-funciona">
-      <div class="mx-auto max-w-6xl space-y-8 px-6 py-16">
-        <h2 class="text-3xl font-bold tracking-tight text-white">¿Cómo funciona?</h2>
+      <div class="mx-auto max-w-6xl space-y-8 px-6 py-12 lg:py-20">
+        <h2 class="text-2xl font-bold tracking-tight text-white lg:text-3xl">¿Cómo funciona?</h2>
 
-        <ol class="grid grid-cols-4 gap-8">
+        <ol class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           <li class="space-y-4 rounded-xl border border-slate-700 bg-slate-900 p-6">
             <span class="flex h-10 w-10 items-center justify-center rounded-full bg-amber-400 font-bold text-slate-950">1</span>
             <h3 class="text-xl font-bold text-white">Elige tu ruta</h3>
@@ -213,9 +213,9 @@
 
     <!-- FRANJA DE INSCRIPCIÓN -->
     <section id="inscripcion" class="border-y border-slate-700 bg-slate-900">
-      <div class="mx-auto flex max-w-6xl items-center justify-between gap-8 px-6 py-16">
+      <div class="mx-auto flex max-w-6xl flex-col items-start gap-6 px-6 py-12 md:flex-row md:items-center md:justify-between md:gap-8 lg:py-16">
         <div class="space-y-2">
-          <h2 class="text-3xl font-bold tracking-tight text-white">Reserva tu cupo</h2>
+          <h2 class="text-2xl font-bold tracking-tight text-white lg:text-3xl">Reserva tu cupo</h2>
           <p class="text-lg text-slate-300">Jueves a sábado a las 7:30 p. m. Los cupos son limitados.</p>
         </div>
         <a href="../paginas/reservas.html"
@@ -229,7 +229,7 @@
 
   <!-- PIE DE PÁGINA: tres bloques con flex -->
   <footer>
-    <div class="mx-auto flex max-w-6xl justify-between gap-8 px-6 py-12">
+    <div class="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-10 md:flex-row md:justify-between lg:py-12">
       <div class="space-y-2">
         <h3 class="font-bold text-white">Rueda Nocturna</h3>
         <p class="text-sm text-slate-400">Una campaña de Rueda Libre.</p>
