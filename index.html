@@ -16,9 +16,9 @@
   <!-- Hoja de estilos externa: para que la hoja de estilo utilice las fuentes, estas se cargan primero que el css -->
   <!-- Bootstrap va antes de styles.css para que los estilos propios del sitio tengan prioridad -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
   <!-- Variables --bs-* con los colores y las fuentes de la marca -->
-  <link rel="stylesheet" href="CSS/bootstrap-marca.css">
+  <link rel="stylesheet" href="css/bootstrap-marca.css">
 
 </head>
 
@@ -35,10 +35,11 @@
         </button>
         <div class="collapse navbar-collapse" id="menu-principal">
           <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="paginas/tarifas.html">Tarifas</a></li>
-          <li class="nav-item"><a class="nav-link" href="paginas/reservas.html">Reservas</a></li>
-          <li class="nav-item"><a class="nav-link" href="nocturna/index.html">Rueda Nocturna <span class="badge text-bg-warning">Nuevo</span></a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="paginas/tarifas.html">Tarifas</a></li>
+            <li class="nav-item"><a class="nav-link" href="paginas/reservas.html">Reservas</a></li>
+            <li class="nav-item"><a class="nav-link" href="nocturna/index.html">Rueda Nocturna <span
+                  class="badge text-bg-warning">Nuevo</span></a></li>
           </ul>
         </div>
       </div>
@@ -47,10 +48,10 @@
 
   <!--Contenido principal: solo hay un <main> por página-->
   <main>
-    <!-- creamos la clase portada dentro del section para que la podamos estilizar exclusivamente-->
-    <section class="portada">
+    <!-- creamos la clase hero dentro del section para que la podamos estilizar exclusivamente-->
+    <section class="hero">
 
-      <div class="portada-texto">
+      <div class="hero-text">
         <h1>Rueda Libre | Alquiler de bicicletas en Medellín</h1>
 
         <p>
@@ -70,12 +71,18 @@
     <!-- Carrusel de Bootstrap: 3 rutas del sitio + cuarta diapositiva que lleva a la landing.
          Sin data-bs-ride no se reproduce solo (mejor para accesibilidad). -->
     <section aria-label="Destacados de Rueda Libre">
-      <div id="carrusel-destacados" class="carousel slide my-4" aria-roledescription="carrusel" aria-label="Destacados de Rueda Libre">
+      <h2 class="visually-hidden">Destacados de Rueda Libre</h2>
+      <div id="carrusel-destacados" class="carousel slide my-4" aria-roledescription="carrusel"
+        aria-label="Destacados de Rueda Libre">
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carrusel-destacados" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositiva 1: Cerro El Volador"></button>
-          <button type="button" data-bs-target="#carrusel-destacados" data-bs-slide-to="1" aria-label="Diapositiva 2: Ciclovía"></button>
-          <button type="button" data-bs-target="#carrusel-destacados" data-bs-slide-to="2" aria-label="Diapositiva 3: Medellín - Caldas"></button>
-          <button type="button" data-bs-target="#carrusel-destacados" data-bs-slide-to="3" aria-label="Diapositiva 4: Rueda Nocturna"></button>
+          <button type="button" data-bs-target="#carrusel-destacados" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Diapositiva 1: Cerro El Volador"></button>
+          <button type="button" data-bs-target="#carrusel-destacados" data-bs-slide-to="1"
+            aria-label="Diapositiva 2: Ciclovía"></button>
+          <button type="button" data-bs-target="#carrusel-destacados" data-bs-slide-to="2"
+            aria-label="Diapositiva 3: Medellín - Caldas"></button>
+          <button type="button" data-bs-target="#carrusel-destacados" data-bs-slide-to="3"
+            aria-label="Diapositiva 4: Rueda Nocturna"></button>
         </div>
 
         <div class="carousel-inner">
@@ -105,9 +112,11 @@
 
           <!-- Cuarta diapositiva: lleva a la landing de Tailwind -->
           <div class="carousel-item">
-            <div class="carrusel-nocturna-contenido d-flex flex-column justify-content-center align-items-center text-center text-white">
+            <div
+              class="night-slide-content d-flex flex-column justify-content-center align-items-center text-center text-white">
               <h3 class="text-warning">Rueda Nocturna</h3>
-              <p>Descubre Medellín en bici cuando se encienden las luces. Recorridos guiados de jueves a sábado a las 7:30 p. m.</p>
+              <p>Descubre Medellín en bici cuando se encienden las luces. Recorridos guiados de jueves a sábado a las
+                7:30 p. m.</p>
               <a href="nocturna/index.html" class="btn btn-primary">Conoce Rueda Nocturna</a>
             </div>
           </div>
@@ -124,24 +133,24 @@
       </div>
     </section>
 
-    <section class="rutas">
-      <h2>Nuestras flota</h2>
+    <section class="routes">
+      <h2>Nuestras rutas</h2>
 
-      <div class="grid-rutas">
+      <div class="routes-grid">
 
-        <article class="tarjeta-ruta">
+        <article class="route-card">
           <img src="img/volador.jpeg" alt="Ruta en bicicleta por el Cerro El Volador">
           <h3>Cerro El Volador</h3>
           <p>Nivel: Bajo</p>
         </article>
 
-        <article class="tarjeta-ruta">
+        <article class="route-card">
           <img src="img/ciclovia.jpeg" alt="Ciclovía por la Regional">
           <h3>Ciclovía</h3>
           <p>Nivel: Intermedio</p>
         </article>
 
-        <article class="tarjeta-ruta">
+        <article class="route-card">
           <img src="img/caldas.jpeg" alt="Ruta en bicicleta hacia Caldas">
           <h3>Medellín - Caldas</h3>
           <p>Nivel: Avanzado</p>
@@ -160,8 +169,8 @@
       </p>
     </section>
 
-    <!--Cree una clase llamada servicios para agregarle estilos a todos los article de la section Nuestros servicios-->
-    <section class="servicios">
+    <!--Cree una clase llamada services para agregarle estilos a todos los article de la section Nuestros servicios-->
+    <section class="services">
       <h2>Nuestros servicios</h2>
 
       <!--Cada servicio es un <article>: tiene sentido por sí solo-->
@@ -199,7 +208,7 @@
 
       <article>
         <!--span es una etiqueta que agrupa una pequeña parte del contenido y poder darle estilo con CSS -->
-        <span class="etiqueta-nuevo">Nuevo</span>
+        <span class="badge-new">Nuevo</span>
 
         <img src="img/Bicicletas_electricas.jpg" alt="Bicicleta eléctrica disponible para alquilar" width="400">
 
@@ -212,69 +221,69 @@
       </article>
 
     </section>
-    <!-- Creamos la section flota y le agregamos un div, este contenedor nos permite modificar el CSS grid-->
-    <!--Aquí tenemos dos clases porque .flota identifica la sección compelta y .grid-fota es la que organice las tarjetas por medio de grid-->
-    <section class="flota">
+    <!-- Creamos la section fleet y le agregamos un div, este contenedor nos permite modificar el CSS grid-->
+    <!--Aquí tenemos dos clases porque .fleet identifica la sección completa y .fleet-grid es la que organiza las tarjetas por medio de grid-->
+    <section class="fleet">
       <h2>Nuestra flota</h2>
 
-      <div class="grid-flota">
+      <div class="fleet-grid">
 
         <!--Los article representa cada una de las bicicleta como contenido independiente-->
-        <article class="tarjeta-bicicleta">
+        <article class="bike-card">
           <img src="img/urbana_clasica.jpg" alt="Bicicleta urbana clásica">
           <h3>Urbana Clásica</h3>
           <p>
             Cómoda y liviana para las ciclorrutas.
           </p>
-          <p class="precio">$10.000 / hora</p>
+          <p class="price">$10.000 / hora</p>
           <a href="paginas/reservas.html">Reservar</a>
         </article>
 
-        <article class="tarjeta-bicicleta">
+        <article class="bike-card">
           <img src="img/urbana_plegable.jpg" alt="Bicicleta urbana plegable">
           <h3>Urbana Plegable</h3>
           <p>Se dobla en segundos; ideal para combinar con el metro.</p>
-          <p class="precio">$12.000 / hora</p>
+          <p class="price">$12.000 / hora</p>
           <a href="paginas/reservas.html">Reservar</a>
         </article>
 
-        <article class="tarjeta-bicicleta">
+        <article class="bike-card">
           <img src="img/montana_train.jpg" alt="Bicicleta de montaña Trail">
           <h3>Montaña Trail</h3>
           <p>Suspensión delantera y 21 cambios para las subidas.</p>
-          <p class="precio">$15.000 / hora</p>
+          <p class="price">$15.000 / hora</p>
           <a href="paginas/reservas.html">Reservar</a>
         </article>
 
-        <article class="tarjeta-bicicleta">
+        <article class="bike-card">
           <img src="img/gravel_aventura.jpg" alt="Bicicleta Gravel Aventura">
           <h3>Gravel Aventura</h3>
           <p>Para rutas mixtas de asfalto y destapado.</p>
-          <p class="precio">$18.000 / hora</p>
+          <p class="price">$18.000 / hora</p>
           <a href="paginas/reservas.html">Reservar</a>
         </article>
 
-        <article class="tarjeta-bicicleta">
+        <article class="bike-card">
           <img src="img/Electrica_urbana.jpg" alt="Bicicleta eléctrica urbana">
           <h3>Eléctrica Urbana</h3>
           <p>Asistencia eléctrica con 45 km de autonomía.</p>
-          <p class="precio">$25.000 / hora</p>
+          <p class="price">$25.000 / hora</p>
           <a href="paginas/reservas.html">Reservar</a>
         </article>
 
-        <article class="tarjeta-bicicleta">
+        <article class="bike-card">
           <img src="img/infantil.jpg" alt="Bicicleta infantil">
           <h3>Infantil</h3>
           <p>Para niños de 6 a 10 años.</p>
-          <p class="precio">$8.000 / hora</p>
+          <p class="price">$8.000 / hora</p>
           <a href="paginas/reservas.html">Reservar</a>
         </article>
 
-        <article class="tarjeta-bicicleta">
+        <article class="bike-card">
           <img src="img/Tandem.jpg" alt="Bicicleta Tándem para dos personas">
           <h3>Tándem</h3>
           <p>Para dos personas; perfecta para pasear en pareja.</p>
-          <p class="precio">$20.000 / hora</p>
+          <p class="price">$20.000 / hora</p>
           <a href="paginas/reservas.html">Reservar</a>
         </article>
 
@@ -290,7 +299,7 @@
         <li>Recoge la bicicleta en el punto de encuentro, disfruta tu recorrido por Medellín y devuélvela en el horario
           acordado.</li>
       </ol>
-      <p><a href="paginas/reservas.html" class="btn-reservar">Reservar ahora</a></p>
+      <p><a href="paginas/reservas.html" class="btn-book">Reservar ahora</a></p>
 
       <!--Beneficios es un h3, así que va anidado dentro de ¿Cómo alquilar? para no alterar la jerarquía-->
       <section>
@@ -317,21 +326,21 @@
 
   <!--Pie de página - se agrego div porque son elementos flexibles que podemos distribuir horizontalmente-->
   <footer>
-    <div class="contenedor">
+    <h2 class="visually-hidden">Información del sitio</h2>
 
-      <div class="footer-marca">
-        <h3>Rueda Libre</h3>
+    <div class="container-site">
+
+      <div class="footer-brand">
+        <p class="footer-title">Rueda Libre</p>
         <p>Todos los derechos reservados © 2026</p>
       </div>
 
-      <div class="footer-contacto">
+      <div class="footer-contact">
         <h3>Contacto</h3>
-        <p>
-          <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>
-        </p>
+        <p><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
       </div>
 
-      <div class="footer-horario">
+      <div class="footer-hours">
         <h3>Horario de atención</h3>
         <p>Martes a viernes: 7:00 a. m. – 8:00 p. m.</p>
         <p>Sábados y domingos: 6:00 a. m. – 8:00 p. m.</p>
@@ -343,7 +352,7 @@
 
   <!--href es la dirección del enlace - la clase es para darle estilo - target abre el enlace en otra pestaña - noopener? para qué sirve? -->
   <!--noopener: evita que la página que abriste en otra pestaña pueda controlar la página original. noreferrer: evita que se envíe información sobre la página de origen al sitio que estás abriendo.-->
-  <a href="https://wa.me/573000000000" class="whatsapp-fijo" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/573000000000" class="whatsapp-fixed" target="_blank" rel="noopener noreferrer">
     WhatsApp
   </a>
 

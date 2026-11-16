@@ -76,7 +76,7 @@ a {
 /* Nuestra flota - CSS Grid */
 /* Aquí activamos grid, le indicamos al navegador que ese elemento será un contenedor de cuadrícula. */
 /*Sus hijos directos —en nuestro caso, los siete <article>— se convierten en elementos de Grid */
-.grid-flota {
+.fleet-grid {
     display: grid;
     /* grid-template-columns es una propiedad que define cuántas columnas tendrá nuestra cuadrícula y cuánto espacio ocupará cada una */
     /* repeat significa repetición de configuración de columnas- auto- fit ajusta la cantidad de columnas según el espacio disponible*/
@@ -85,13 +85,13 @@ a {
     gap: var(--spacing-large);
 }
 
-.tarjeta-bicicleta img {
+.bike-card img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-.tarjeta-bicicleta {
+.bike-card {
     display: flex;
     flex-direction: column;
     /* Distribuye el espacio libre entre los elementos, dejando el primero arriba y el último abajo.*/
@@ -108,10 +108,10 @@ a {
    3. LAYOUT (contenedores)
    ======================================== */
 
-/* .contenedor modifica el header y el footer*/
+/* .container-site modifica el header y el footer*/
 /* max-width este ancho es pensando en pantallas grandes - ¿en funcion de la responsividad? */
 /* margin es que centra horizontalmente el contenedor*/
-.contenedor {
+.container-site {
     width: 90%;
     max-width: 75rem;
     margin: 0 auto;
@@ -144,14 +144,14 @@ header {
 /* básicamente lo que hizo fue distibuir el espacio disponible entre ellos con*/
 /* justify-content: space-between para eso se uso estos elementos para decirle que los elementos se desplacen a los extremos*/
 /*
-header .contenedor {
+header .container-site {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }*/
 
-/* MÓVIL: encabezado  - REPASAR ESTO - ME CONFUNDE - LO MISMO PARA EL #menu y el footer .contenedor*/
-header .contenedor {
+/* MÓVIL: encabezado  - REPASAR ESTO - ME CONFUNDE - LO MISMO PARA EL #menu y el footer .container-site*/
+header .container-site {
     display: flex;
     /*flex-direction: column: coloca el nombre y el menú uno debajo del otro*/
     flex-direction: column;
@@ -218,10 +218,10 @@ header p {
 /* ========================================
    5. PORTADA
    ======================================== */
-/* CAMBIE .portada PARA RESPONDER AL MINIRETO 4 VERSIÓN MOBILE*/
+/* CAMBIE .hero PARA RESPONDER AL MINIRETO 4 VERSIÓN MOBILE*/
 /* min-height establece la altura mínima de la sección. 50vh es la altura de la ventana, */
 /*80vh el 80% de la altura de la ventana visible (aquí usamos 50vh)*/
-/*.portada {
+/*.hero {
     min-height: 50vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -230,7 +230,7 @@ header p {
 }
 
 /* MÓVIL: portada */
-.portada {
+.hero {
     min-height: 50vh;
     display: grid;
     grid-template-columns: 1fr;
@@ -239,7 +239,7 @@ header p {
 }
 
 
-.portada img {
+.hero img {
     width: 100%;
     max-width: 1000px;
     height: auto;
@@ -263,8 +263,8 @@ button {
     cursor: pointer;
 }
 
-/* Aquí tenemos el estilo que definimos en la clase .btn-reservar como se puede ver tiene la apariencia de un botón aunque no lo sea*/
-.btn-reservar {
+/* Aquí tenemos el estilo que definimos en la clase .btn-book como se puede ver tiene la apariencia de un botón aunque no lo sea*/
+.btn-book {
     /* permite aplicar dimensiones y espaciado al enlace*/
     display: inline-block;
     /* Establece el fondo verde*/
@@ -283,13 +283,13 @@ button {
 }
 
 /* Al igual que con #menu- aquí usamos hover para cambiar el color cuando pasamos el cursor del mouse por el texto*/
-.btn-reservar:hover {
+.btn-book:hover {
     background-color: var(--color-night-blue);
     color: var(--color-white);
 }
 
 /* Y el focus para que cambie de estilo cuando pasamos por el enlace con tab*/
-.btn-reservar:focus {
+.btn-book:focus {
     background-color: var(--color-night-blue);
     color: var(--color-white);
     outline: 2px solid var(--color-pedal-orange);
@@ -299,9 +299,9 @@ button {
 /* ========================================
    TARJETAS DE RUTAS // se hizo con Grid
    ======================================== */
-/* CAMBIO .grid-rutas PARA CUMPLIR CON EL RETO 4 MOBILE SOLO CAMBIE EL grid-template-columns: repeat(3, 1fr);
+/* CAMBIO .routes-grid PARA CUMPLIR CON EL RETO 4 MOBILE SOLO CAMBIE EL grid-template-columns: repeat(3, 1fr);
 
-/*.grid-rutas {
+/*.routes-grid {
     display: grid;
     /* grid- template- columns: repeat (3, 1fr) me esta indicando que las columnas van a permanecer de a tres por fila aunque le cambie el ancho 
     /* a la pantalla, por el contrario si uso repeat(auto-fit, minmax(250px, 1fr)) ajusta las columnas dependiendo del ancho de la pantalla*/
@@ -310,13 +310,13 @@ button {
 } */
 
 /* MOVILE */
-.grid-rutas {
+.routes-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-large);
 }
 
-.tarjeta-ruta img {
+.route-card img {
     width: 100%;
     height: auto;
     display: block;
@@ -327,13 +327,13 @@ button {
    7. SERVICIOS (tarjetas)
    ======================================== */
 
-/* .servicios es la clase que creamos en el index.html para darle estilos a todos los article de la section Nuestros servicios*/
+/* .services es la clase que creamos en el index.html para darle estilos a todos los article de la section Nuestros servicios*/
 /* padding crea espacios entre el contenido de la tarejta (image, título y texto) y sus bordes */
 /* var(--spacing-medium) es la variable que declaramos en :root para establecer un espaciado medio*/
 /* border establece un borde de 1px de ancho, solid (línea continua) color gris. O sea, literal le hizo una margen cuadrada a la tarejeta*/
 /* border-radius redondea las esquinas*/
 /* margin-bottom agrega un espacio fuera de las tarjetas debajo de ellas para separar las tarjetas entre sí*/
-.servicios article {
+.services article {
     padding: var(--spacing-medium);
     border: 1px solid var(--color-asphalt-gray);
     border-radius: 8px;
@@ -344,11 +344,11 @@ button {
 
 /* Tati, recuerda que gracias a box-sizing: border-box, el ancho de la tarjeta incluye su padding y sus bordes. NO LO OLVIDES*/
 /* width: 80% hace que la imagen ocupe el 80% del ancho disponible dentro de la tarjeta*/
-.servicios img {
+.services img {
     width: 80%;
 }
 
-.etiqueta-nuevo {
+.badge-new {
     /* fondo naranja*/
     background-color: var(--color-pedal-orange);
     /* color del texto*/
@@ -446,21 +446,21 @@ form fieldset {
 }
 
     /* Grid para distribuir el espacio del formulario en la página reservas - SE REEMPLAZA EN FUNCIÓN DE MOVILE MINIRETO 4*/
-/*.layout-reservas {
+/*.booking-layout {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: var(--spacing-large);
 }
 
 /* MÓVIL: página de reservas */
-.layout-reservas {
+.booking-layout {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-large);
 }
 
 /* Apariencia del recuadro del horario */
-.layout-reservas aside {
+.booking-layout aside {
     padding: var(--spacing-large);
     border: 1px solid var(--color-asphalt-gray);
     border-radius: 8px;
@@ -470,7 +470,7 @@ form fieldset {
 
 /* SE REEMPLAZA EN FUNCIÓN DE MOBILE MINIRETO 4*/
 /* Aquí cree una clase con un div para agrupar el celular y número de documento*/
-/*.campos-cortos {
+/*.short-fields {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-medium);
@@ -478,7 +478,7 @@ form fieldset {
 
 /* MÓVILE */
 
-.campos-cortos {
+.short-fields {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-medium);
@@ -491,7 +491,7 @@ form fieldset {
 
 /* fixed fija el elemento respecto a la ventana del navegador.*/
 /* right establece la distancia desde la derecha. bottom establece la distancia desde abajo. */
-.whatsapp-fijo {
+.whatsapp-fixed {
     position: fixed;
     right: var(--spacing-medium);
     bottom: var(--spacing-medium);
@@ -504,12 +504,12 @@ form fieldset {
     font-weight: 600;
 }
 
-.whatsapp-fijo:hover {
+.whatsapp-fixed:hover {
     background-color: var(--color-pedal-orange);
     color: var(--color-white);
 }
 
-.whatsapp-fijo:focus {
+.whatsapp-fixed:focus {
     outline: 2px solid var(--color-pedal-orange);
     outline-offset: 4px;
 }
@@ -527,22 +527,22 @@ footer {
 
 /* AQUI AGREGAMOS PROPIEDADES FLEX BOX - Y PARA CUMPLIR MINIRETO 4 SE REEMPLAZA PARA AGREGARLE VERSIÓN MOBILE*/
 
-/*footer .contenedor {
+/*footer .container-site {
     /* Coloca los tres bloques en una fila*/
  /*   display: flex;
-    /* 	Distribuye el espacio entre los bloques*/
+    /* Distribuye el espacio entre los bloques*/
  /*   justify-content: space-between;
-    /* 	Alinea los bloques desde arriba */
+    /* Alinea los bloques desde arriba */
  /*   align-items: flex-start;
-    /* 	Permite que los bloques bajen a otra fila si no hay espacio */
+    /* Permite que los bloques bajen a otra fila si no hay espacio */
  /*   flex-wrap: wrap;
-    /* 	Establece separación entre los bloques */
+    /* Establece separación entre los bloques */
  /*   gap: var(--spacing-large); 
 }
 
 /* LO ANTERIOR SE REEMPLAZO POR ESTO*/ 
 /* MÓVIL: pie de página */
-footer .contenedor {
+footer .container-site {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -550,6 +550,15 @@ footer .contenedor {
     text-align: center;
 }
 
+/* Títulos del pie de página: el nombre de la marca (p) y los h3 se ven iguales */
+.footer-title,
+footer h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-white);
+    margin: 0 0 var(--spacing-small);
+}
 
 /* Esto modifica el color del enlace del correo para que se vea más*/
 footer a {
@@ -569,7 +578,7 @@ footer a:hover {
 @media (min-width: 768px) {
 
     /* Recuperamos la distribución horizontal del encabezado */
-    header .contenedor {
+    header .container-site {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -581,7 +590,7 @@ footer a:hover {
     }
 
     /* Recuperamos la distribución horizontal del footer */
-    footer .contenedor {
+    footer .container-site {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
@@ -590,12 +599,12 @@ footer a:hover {
     }
 
     /* Galería: dos columnas en tablet */
-    .grid-rutas {
+    .routes-grid {
     grid-template-columns: repeat(2, 1fr);
     }
 
     /* Campos del formulario: dos columnas en tablet */
-    .campos-cortos {
+    .short-fields {
     grid-template-columns: repeat(2, 1fr);
 }
 }
@@ -604,17 +613,17 @@ footer a:hover {
     @media (min-width: 1200px) {
 
     /* Portada: dos columnas */
-    .portada {
+    .hero {
         grid-template-columns: 1fr 1fr;
     }
 
     /* Galería de rutas: tres columnas */
-    .grid-rutas {
+    .routes-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
     /* Reservas: proporción 2:1 */
-    .layout-reservas {
+    .booking-layout {
         grid-template-columns: 2fr 1fr;
     }
 

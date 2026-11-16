@@ -101,7 +101,7 @@ header {
 }
 
 /* Cuarta diapositiva: Rueda Nocturna (sin foto, fondo Azul Noche) */
-.carrusel-nocturna-contenido {
+.night-slide-content {
   height: 22rem;
   padding: 2rem 4rem;
   background-color: #14213D;
